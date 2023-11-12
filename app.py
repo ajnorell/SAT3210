@@ -1,7 +1,7 @@
 #SAT3210
 #Lab06
 #Section 5
-#ajnorell
+#ajnorell, ikgatti, ajurewic
 #Mariadb
 
 
@@ -20,9 +20,52 @@ try:
 
     cursor = con.cursor()
        
-    def location():
-        emp_num = input("please enter an emp_ID you would like to update location: ")
+    def start():
+        sel = input('Would you like to update employees[1] or concessions[2]?')
 
+        match sel:
+            case "1":
+                employees()
+
+            case "2":
+                concessions()
+
+            case _:
+                print("Option is not allowed. Please try again.")
+                start()
+
+
+    def employees():
+        global emp_num
+        emp_num = input("please enter the ID of the employee you would like to update location: ")
+
+    def concessions():
+        print()
+
+    def show_emp():
+        cursor.execute("SELECT * FROM employees",)
+        if cursor.rowcount == 0:
+            print("There is no one employed :(")
+        else:
+            rows = cursor.fetchall()
+            table = PrettyTable(["ID","Location ID","Role", "Name"])
+            for i in rows:
+                table.add_row(i)
+            print(table)
+    
+    def show_con():
+        cursor.execute("SELECT * FROM concessions",)
+        if cursor.rowcount == 0:
+            print("There is no food :(")
+        else:
+            rows = cursor.fetchall()
+            table = PrettyTable(["Type","Item","Price"])
+            for i in rows:
+                table.add_row(i)
+            print(table)
+
+    def location():
+        show_emp()
         cursor.execute("UPDATE loc_ID from employee")
            
     def role():
@@ -32,11 +75,8 @@ try:
         print()
 
 
-	#menu for updating case
-
-    print('Would you like to update employees[1] or concessions[2]?')
     
-    usr = input('1 or 2: ')
+    
 
     if usr == '1':
     	print("[a] employees (location, role, name), [b] payroll(salary, acct num, routing num, address), [c] training (con, tix, man)")
