@@ -13,11 +13,18 @@ try:
 
     cursor = con.cursor()
 
-    usr = input("as")
-    # Validate user input
-    cursor.execute("SELECT loc_ID FROM theater")
-    rows = cursor.fetchall()
-    print(rows)
+    def show_loc():
+        cursor.execute("SELECT location, loc_ID FROM theater",)
+        if cursor.rowcount == 0:
+            print("There are no locations :(")
+        else:
+            rows = cursor.fetchall()
+            table = PrettyTable(["Location","Location ID"])
+            for i in rows:
+                table.add_row(i)
+            print(table)
+
+    show_loc()
             
         
 
