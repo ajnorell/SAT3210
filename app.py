@@ -63,7 +63,7 @@ try:
                 else:
                     break
             if var =="F":
-                print("That is not a valid Location ID. Please Try again.")
+                print("That is not a valid Employee ID. Please Try again.")
                 break
         
         var = "F"
@@ -72,6 +72,7 @@ try:
         while var == "F":
             match sel:
                 case "1": # Location
+#TODO Input Location vs Loc_ID
                     usr = input
                     show_loc()
                     usr = input("What is the new location ID of this employee?:")
@@ -154,7 +155,7 @@ try:
                     usr = float(usr)
 
                     # Validate user input
-                    #TODO
+#TODO
                     
                     # Update the table
                     cursor.execute("""
@@ -236,8 +237,86 @@ try:
                 
 
                 case "8": # Training
-                    print()
-                    #TODO
+# TODO Check boolean values are correct
+                    global emp_ID
+                    show_train(emp_ID)
+                    
+
+                    print("[1] Concessions Training\n[2] Tickets Training\n[3] Manager Training)
+                    usr = input("Which training would you like to edit?: ")
+                    usr2 = input("Would you like to add or remove the training?: ")
+                    usr2 = usr2.lower()
+                    
+                    match usr:
+                        case "1":
+                            if usr2 == "add"
+                                cursor.execute("""
+                                    UPDATE training 
+                                    SET con_training = 1 
+                                    WHERE emp_ID == ?
+                                """,(emp_ID))
+                                con.commmit()
+                                var = "T"
+
+                            elif usr2 == "remove"
+                                cursor.execute("""
+                                    UPDATE training 
+                                    SET con_training = 0 
+                                    WHERE emp_ID == ?
+                                """,(emp_ID))
+                                con.commmit()
+                                var = "T"
+
+                            else:
+                                print("Invalid add/remove. No data was changed")
+
+                        case "2":
+                            if usr2 == "add"
+                                cursor.execute("""
+                                    UPDATE training 
+                                    SET tix_training = 1
+                                    WHERE emp_ID == ?
+                                """,(emp_ID))
+                                con.commmit()
+                                var = "T"
+
+                            elif usr2 == "remove"
+                                cursor.execute("""
+                                    UPDATE training 
+                                    SET tix_training = 0 
+                                    WHERE emp_ID == ?
+                                """,(emp_ID))
+                                con.commmit()
+                                var = "T"
+
+                            else:
+                                print("Invalid add/remove. No data was changed")
+
+
+                        case "3":
+                            if usr2 == "add"
+                                cursor.execute("""
+                                    UPDATE training 
+                                    SET man_training = 1 
+                                    WHERE emp_ID == ?
+                                """,(emp_ID))
+                                con.commmit()
+                                var = "T"
+
+                            elif usr2 == "remove"
+                                cursor.execute("""
+                                    UPDATE training 
+                                    SET man_training = 0 
+                                    WHERE emp_ID == ?
+                                """,(emp_ID))
+                                con.commmit()
+                                var = "T"
+
+                            else:
+                                print("Invalid add/remove. No data was changed")
+
+                        case _:
+                            print("That is not  a valid option, Please try again.")
 
                 case _:
                     print("Option is not allowed. Please try again.")
@@ -248,6 +327,7 @@ try:
         print()
 
     def show_emp():
+#TODO Show location vs location ID
         cursor.execute("SELECT * FROM employees",)
         if cursor.rowcount == 0:
             print("There is no one employed :(")
@@ -287,6 +367,17 @@ try:
         for i in rows:
             table.add_row(i)
         print(table)
+
+    def show_train(emp):
+# TODO Make boolean readable
+        cursor.execute("SELECT * FROM training WHERE emp_ID == ?", (emp))
+        rows = cursor.fetchall()
+        table = PrettyTable(["Employee ID", "Concessions Training", "Ticket Training", "Manager Training"])
+        for i in rows:
+            table.add_row(i)
+        print(table)
+
+
 
     start()
 
