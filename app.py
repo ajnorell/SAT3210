@@ -231,7 +231,6 @@ try:
 
                 case "8": # Training
 # TODO Check boolean values are correct
-                    global emp_num
                     show_train(emp_num)
                     
 
