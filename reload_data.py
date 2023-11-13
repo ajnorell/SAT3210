@@ -44,7 +44,7 @@ try:
 
     cursor.execute("""
         LOAD DATA LOCAL INFILE '/home/sat3210/SAT3210/time_slot.csv'
-        REPLACE INTO TABLE time_)slot
+        REPLACE INTO TABLE time_slot
         FIELDS TERMINATED BY ','
         IGNORE 1 LINES
         """)
