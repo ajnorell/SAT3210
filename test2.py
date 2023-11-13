@@ -18,10 +18,10 @@ try:
     usr = 1
 
     for i in rows:
-        a = int(i)
-        print(a)
-        if i == usr:
-            print("T")
+        for j, entry in enumerate(i):
+            print(entry)
+            if i == usr:
+                print("T")
             
         
 
