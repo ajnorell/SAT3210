@@ -76,7 +76,6 @@ try:
                     usr = input
                     show_loc()
                     usr = input("What is the new location ID of this employee?:")
-                    usr = int(usr)
 
                     # Validate user input
                     cursor.execute("SELECT loc_ID FROM theater")
@@ -93,6 +92,7 @@ try:
                         print("That is not a valid Location ID. Please Try again.")
                         break
                     
+                    usr = int(usr)
                     # Update the table
                     cursor.execute("""
                         UPDATE employees 
