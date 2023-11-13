@@ -342,7 +342,7 @@ try:
             print(table)
 
     def show_loc():
-        cursor.execute("SELECT location loc_ID FROM theater",)
+        cursor.execute("SELECT location, loc_ID FROM theater",)
         if cursor.rowcount == 0:
             print("There are no locations :(")
         else:
