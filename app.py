@@ -61,6 +61,7 @@ try:
                             break
                 else:
                     break
+#TODO Always prints this statement for some reason
             if var =="F":
                 print("That is not a valid Employee ID. Please Try again.")
                 break
@@ -100,6 +101,7 @@ try:
                     """,
                     (usr,emp_num))
                     con.commit()
+                    show_emp()
 
                 case "2": # Role
                     usr = input
