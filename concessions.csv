@@ -1,0 +1,8 @@
+type,item,price
+basic,popcorn,10.00
+full,pretzel,12.42
+restaurant,steak,19.99
+basic,pop ,5.00
+full,candy,3.00
+restaurant,salad,15.00
+restaurant,alcohol,20.99

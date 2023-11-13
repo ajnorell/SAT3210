@@ -1,0 +1,6 @@
+Loc_ID,Location,num_screens,concession_types
+1,chicago,10,basic
+2,New York,5,null
+3,minneapolis,11,full
+4,Seattle,9,restaurant
+5,Dallas,7,basic

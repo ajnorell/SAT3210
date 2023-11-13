@@ -1,0 +1,351 @@
+showing_ID,Now_showing,title,time_slot_ID,location,screen_num,start_date,start_month,end_date,end_month
+1,0,Dog Days,1,Chicago,1,1,1,30,6
+2,0,Dog Days,13,Chicago,1,1,1,30,6
+3,0,Dog Days,29,Chicago,1,1,1,30,6
+4,0,Dog Days,48,Chicago,1,1,1,30,6
+5,0,Dog Days,59,Chicago,1,1,1,30,6
+6,0,Dog Days,71,Chicago,1,1,1,30,6
+7,0,Dog Days,75,Chicago,1,1,1,30,6
+8,0,Dog Days,85,Chicago,1,1,1,30,6
+9,0,Dog Days,100,Chicago,1,1,1,30,6
+10,0,Dog Days,106,Chicago,1,1,1,30,6
+11,0,Dog Days,125,Chicago,1,1,1,30,6
+12,0,Dog Days,135,Chicago,1,1,1,30,6
+13,0,Dog Days,155,Chicago,1,1,1,30,6
+14,0,Dog Days,168,Chicago,1,1,1,30,6
+15,0,Dog Days,1,Dallas,1,1,1,30,6
+16,0,Dog Days,12,Dallas,1,1,1,30,6
+17,0,Dog Days,25,Dallas,1,1,1,30,6
+18,0,Dog Days,36,Dallas,1,1,1,30,6
+19,0,Dog Days,49,Dallas,1,1,1,30,6
+20,0,Dog Days,56,Dallas,1,1,1,30,6
+21,0,Dog Days,73,Dallas,1,1,1,30,6
+22,0,Dog Days,80,Dallas,1,1,1,30,6
+23,0,Dog Days,97,Dallas,1,1,1,30,6
+24,0,Dog Days,110,Dallas,1,1,1,30,6
+25,0,Dog Days,121,Dallas,1,1,1,30,6
+26,0,Dog Days,132,Dallas,1,1,1,30,6
+27,0,Dog Days,145,Dallas,1,1,1,30,6
+28,0,Dog Days,158,Dallas,1,1,1,30,6
+29,0,Dog Days,1,minneapolis,1,1,1,30,6
+30,0,Dog Days,18,minneapolis,1,1,1,30,6
+31,0,Dog Days,26,minneapolis,1,1,1,30,6
+32,0,Dog Days,40,minneapolis,1,1,1,30,6
+33,0,Dog Days,51,minneapolis,1,1,1,30,6
+34,0,Dog Days,64,minneapolis,1,1,1,30,6
+35,0,Dog Days,74,minneapolis,1,1,1,30,6
+36,0,Dog Days,88,minneapolis,1,1,1,30,6
+37,0,Dog Days,98,minneapolis,1,1,1,30,6
+38,0,Dog Days,110,minneapolis,1,1,1,30,6
+39,0,Dog Days,122,minneapolis,1,1,1,30,6
+40,0,Dog Days,134,minneapolis,1,1,1,30,6
+41,0,Dog Days,146,minneapolis,1,1,1,30,6
+42,0,Dog Days,160,minneapolis,1,1,1,30,6
+43,0,Dog Days,2,New York,1,1,1,30,6
+44,0,Dog Days,24,New York,1,1,1,30,6
+45,0,Dog Days,57,New York,1,1,1,30,6
+46,0,Dog Days,45,New York,1,1,1,30,6
+47,0,Dog Days,50,New York,1,1,1,30,6
+48,0,Dog Days,65,New York,1,1,1,30,6
+49,0,Dog Days,74,New York,1,1,1,30,6
+50,0,Dog Days,95,New York,1,1,1,30,6
+51,0,Dog Days,97,New York,1,1,1,30,6
+52,0,Dog Days,102,New York,1,1,1,30,6
+53,0,Dog Days,125,New York,1,1,1,30,6
+54,0,Dog Days,143,New York,1,1,1,30,6
+55,0,Dog Days,145,New York,1,1,1,30,6
+56,0,Dog Days,152,New York,1,1,1,30,6
+57,0,Dog Days,1,Seattle,1,1,1,30,6
+58,0,Dog Days,7,Seattle,1,1,1,30,6
+59,0,Dog Days,25,Seattle,1,1,1,30,6
+60,0,Dog Days,32,Seattle,1,1,1,30,6
+61,0,Dog Days,49,Seattle,1,1,1,30,6
+62,0,Dog Days,55,Seattle,1,1,1,30,6
+63,0,Dog Days,73,Seattle,1,1,1,30,6
+64,0,Dog Days,79,Seattle,1,1,1,30,6
+65,0,Dog Days,97,Seattle,1,1,1,30,6
+66,0,Dog Days,103,Seattle,1,1,1,30,6
+67,0,Dog Days,121,Seattle,1,1,1,30,6
+68,0,Dog Days,144,Seattle,1,1,1,30,6
+69,0,Dog Days,156,Seattle,1,1,1,30,6
+70,0,Dog Days,162,Seattle,1,1,1,30,6
+71,1,Flushed away,1,chicago,2,1,6,31,12
+72,1,Flushed away,13,chicago,2,1,6,31,12
+73,1,Flushed away,29,chicago,2,1,6,31,12
+74,1,Flushed away,48,chicago,2,1,6,31,12
+75,1,Flushed away,59,chicago,2,1,6,31,12
+76,1,Flushed away,71,chicago,2,1,6,31,12
+77,1,Flushed away,75,chicago,2,1,6,31,12
+78,1,Flushed away,85,chicago,2,1,6,31,12
+79,1,Flushed away,100,chicago,2,1,6,31,12
+80,1,Flushed away,106,chicago,2,1,6,31,12
+81,1,Flushed away,125,chicago,2,1,6,31,12
+82,1,Flushed away,135,chicago,2,1,6,31,12
+83,1,Flushed away,155,chicago,2,1,6,31,12
+84,1,Flushed away,168,chicago,2,1,6,31,12
+85,1,Flushed away,1,Dallas,2,1,6,31,12
+86,1,Flushed away,12,Dallas,2,1,6,31,12
+87,1,Flushed away,25,Dallas,2,1,6,31,12
+88,1,Flushed away,36,Dallas,2,1,6,31,12
+89,1,Flushed away,49,Dallas,2,1,6,31,12
+90,1,Flushed away,56,Dallas,2,1,6,31,12
+91,1,Flushed away,73,Dallas,2,1,6,31,12
+92,1,Flushed away,80,Dallas,2,1,6,31,12
+93,1,Flushed away,97,Dallas,2,1,6,31,12
+94,1,Flushed away,110,Dallas,2,1,6,31,12
+95,1,Flushed away,121,Dallas,2,1,6,31,12
+96,1,Flushed away,132,Dallas,2,1,6,31,12
+97,1,Flushed away,145,Dallas,2,1,6,31,12
+98,1,Flushed away,158,Dallas,2,1,6,31,12
+99,1,Flushed away,1,minneapolis,2,1,6,31,12
+100,1,Flushed away,18,minneapolis,2,1,6,31,12
+101,1,Flushed away,26,minneapolis,2,1,6,31,12
+102,1,Flushed away,40,minneapolis,2,1,6,31,12
+103,1,Flushed away,51,minneapolis,2,1,6,31,12
+104,1,Flushed away,64,minneapolis,2,1,6,31,12
+105,1,Flushed away,74,minneapolis,2,1,6,31,12
+106,1,Flushed away,88,minneapolis,2,1,6,31,12
+107,1,Flushed away,98,minneapolis,2,1,6,31,12
+108,1,Flushed away,110,minneapolis,2,1,6,31,12
+109,1,Flushed away,122,minneapolis,2,1,6,31,12
+110,1,Flushed away,134,minneapolis,2,1,6,31,12
+111,1,Flushed away,146,minneapolis,2,1,6,31,12
+112,1,Flushed away,160,minneapolis,2,1,6,31,12
+113,1,Flushed away,2,New York,2,1,6,31,12
+114,1,Flushed away,24,New York,2,1,6,31,12
+115,1,Flushed away,57,New York,2,1,6,31,12
+116,1,Flushed away,45,New York,2,1,6,31,12
+117,1,Flushed away,50,New York,2,1,6,31,12
+118,1,Flushed away,65,New York,2,1,6,31,12
+119,1,Flushed away,74,New York,2,1,6,31,12
+120,1,Flushed away,95,New York,2,1,6,31,12
+121,1,Flushed away,97,New York,2,1,6,31,12
+122,1,Flushed away,102,New York,2,1,6,31,12
+123,1,Flushed away,125,New York,2,1,6,31,12
+124,1,Flushed away,143,New York,2,1,6,31,12
+125,1,Flushed away,145,New York,2,1,6,31,12
+126,1,Flushed away,152,New York,2,1,6,31,12
+127,1,Flushed away,1,Seattle,2,1,6,31,12
+128,1,Flushed away,7,Seattle,2,1,6,31,12
+129,1,Flushed away,25,Seattle,2,1,6,31,12
+130,1,Flushed away,32,Seattle,2,1,6,31,12
+131,1,Flushed away,49,Seattle,2,1,6,31,12
+132,1,Flushed away,55,Seattle,2,1,6,31,12
+133,1,Flushed away,73,Seattle,2,1,6,31,12
+134,1,Flushed away,79,Seattle,2,1,6,31,12
+135,1,Flushed away,97,Seattle,2,1,6,31,12
+136,1,Flushed away,103,Seattle,2,1,6,31,12
+137,1,Flushed away,121,Seattle,2,1,6,31,12
+138,1,Flushed away,144,Seattle,2,1,6,31,12
+139,1,Flushed away,156,Seattle,2,1,6,31,12
+140,1,Flushed away,162,Seattle,2,1,6,31,12
+141,1,ratatouille,1,chicago,3,1,9,31,12
+142,1,ratatouille,13,chicago,3,1,9,31,12
+143,1,ratatouille,29,chicago,3,1,9,31,12
+144,1,ratatouille,48,chicago,3,1,9,31,12
+145,1,ratatouille,59,chicago,3,1,9,31,12
+146,1,ratatouille,71,chicago,3,1,9,31,12
+147,1,ratatouille,75,chicago,3,1,9,31,12
+148,1,ratatouille,85,chicago,3,1,9,31,12
+149,1,ratatouille,100,chicago,3,1,9,31,12
+150,1,ratatouille,106,chicago,3,1,9,31,12
+151,1,ratatouille,125,chicago,3,1,9,31,12
+152,1,ratatouille,135,chicago,3,1,9,31,12
+153,1,ratatouille,155,chicago,3,1,9,31,12
+154,1,ratatouille,168,chicago,3,1,9,31,12
+155,1,ratatouille,1,Dallas,3,1,9,31,12
+156,1,ratatouille,12,Dallas,3,1,9,31,12
+157,1,ratatouille,25,Dallas,3,1,9,31,12
+158,1,ratatouille,36,Dallas,3,1,9,31,12
+159,1,ratatouille,49,Dallas,3,1,9,31,12
+160,1,ratatouille,56,Dallas,3,1,9,31,12
+161,1,ratatouille,73,Dallas,3,1,9,31,12
+162,1,ratatouille,80,Dallas,3,1,9,31,12
+163,1,ratatouille,97,Dallas,3,1,9,31,12
+164,1,ratatouille,110,Dallas,3,1,9,31,12
+165,1,ratatouille,121,Dallas,3,1,9,31,12
+166,1,ratatouille,132,Dallas,3,1,9,31,12
+167,1,ratatouille,145,Dallas,3,1,9,31,12
+168,1,ratatouille,158,Dallas,3,1,9,31,12
+169,1,ratatouille,1,minneapolis,3,1,9,31,12
+170,1,ratatouille,18,minneapolis,3,1,9,31,12
+171,1,ratatouille,26,minneapolis,3,1,9,31,12
+172,1,ratatouille,40,minneapolis,3,1,9,31,12
+173,1,ratatouille,51,minneapolis,3,1,9,31,12
+174,1,ratatouille,64,minneapolis,3,1,9,31,12
+175,1,ratatouille,74,minneapolis,3,1,9,31,12
+176,1,ratatouille,88,minneapolis,3,1,9,31,12
+177,1,ratatouille,98,minneapolis,3,1,9,31,12
+178,1,ratatouille,110,minneapolis,3,1,9,31,12
+179,1,ratatouille,122,minneapolis,3,1,9,31,12
+180,1,ratatouille,134,minneapolis,3,1,9,31,12
+181,1,ratatouille,146,minneapolis,3,1,9,31,12
+182,1,ratatouille,160,minneapolis,3,1,9,31,12
+183,1,ratatouille,2,New York,3,1,9,31,12
+184,1,ratatouille,24,New York,3,1,9,31,12
+185,1,ratatouille,57,New York,3,1,9,31,12
+186,1,ratatouille,45,New York,3,1,9,31,12
+187,1,ratatouille,50,New York,3,1,9,31,12
+188,1,ratatouille,65,New York,3,1,9,31,12
+189,1,ratatouille,74,New York,3,1,9,31,12
+190,1,ratatouille,95,New York,3,1,9,31,12
+191,1,ratatouille,97,New York,3,1,9,31,12
+192,1,ratatouille,102,New York,3,1,9,31,12
+193,1,ratatouille,125,New York,3,1,9,31,12
+194,1,ratatouille,143,New York,3,1,9,31,12
+195,1,ratatouille,145,New York,3,1,9,31,12
+196,1,ratatouille,152,New York,3,1,9,31,12
+197,1,ratatouille,1,Seattle,3,1,9,31,12
+198,1,ratatouille,7,Seattle,3,1,9,31,12
+199,1,ratatouille,25,Seattle,3,1,9,31,12
+200,1,ratatouille,32,Seattle,3,1,9,31,12
+201,1,ratatouille,49,Seattle,3,1,9,31,12
+202,1,ratatouille,55,Seattle,3,1,9,31,12
+203,1,ratatouille,73,Seattle,3,1,9,31,12
+204,1,ratatouille,79,Seattle,3,1,9,31,12
+205,1,ratatouille,97,Seattle,3,1,9,31,12
+206,1,ratatouille,103,Seattle,3,1,9,31,12
+207,1,ratatouille,121,Seattle,3,1,9,31,12
+208,1,ratatouille,144,Seattle,3,1,9,31,12
+209,1,ratatouille,156,Seattle,3,1,9,31,12
+210,1,ratatouille,162,Seattle,3,1,9,31,12
+211,1,sherk,1,chicago,4,1,7,31,12
+212,1,sherk,13,chicago,4,1,7,31,12
+213,1,sherk,29,chicago,4,1,7,31,12
+214,1,sherk,48,chicago,4,1,7,31,12
+215,1,sherk,59,chicago,4,1,7,31,12
+216,1,sherk,71,chicago,4,1,7,31,12
+217,1,sherk,75,chicago,4,1,7,31,12
+218,1,sherk,85,chicago,4,1,7,31,12
+219,1,sherk,100,chicago,4,1,7,31,12
+220,1,sherk,106,chicago,4,1,7,31,12
+221,1,sherk,125,chicago,4,1,7,31,12
+222,1,sherk,135,chicago,4,1,7,31,12
+223,1,sherk,155,chicago,4,1,7,31,12
+224,1,sherk,168,chicago,4,1,7,31,12
+225,1,sherk,1,Dallas,4,1,7,31,12
+226,1,sherk,12,Dallas,4,1,7,31,12
+227,1,sherk,25,Dallas,4,1,7,31,12
+228,1,sherk,36,Dallas,4,1,7,31,12
+229,1,sherk,49,Dallas,4,1,7,31,12
+230,1,sherk,56,Dallas,4,1,7,31,12
+231,1,sherk,73,Dallas,4,1,7,31,12
+232,1,sherk,80,Dallas,4,1,7,31,12
+233,1,sherk,97,Dallas,4,1,7,31,12
+234,1,sherk,110,Dallas,4,1,7,31,12
+235,1,sherk,121,Dallas,4,1,7,31,12
+236,1,sherk,132,Dallas,4,1,7,31,12
+237,1,sherk,145,Dallas,4,1,7,31,12
+238,1,sherk,158,Dallas,4,1,7,31,12
+239,1,sherk,1,minneapolis,4,1,7,31,12
+240,1,sherk,18,minneapolis,4,1,7,31,12
+241,1,sherk,26,minneapolis,4,1,7,31,12
+242,1,sherk,40,minneapolis,4,1,7,31,12
+243,1,sherk,51,minneapolis,4,1,7,31,12
+244,1,sherk,64,minneapolis,4,1,7,31,12
+245,1,sherk,74,minneapolis,4,1,7,31,12
+246,1,sherk,88,minneapolis,4,1,7,31,12
+247,1,sherk,98,minneapolis,4,1,7,31,12
+248,1,sherk,110,minneapolis,4,1,7,31,12
+249,1,sherk,122,minneapolis,4,1,7,31,12
+250,1,sherk,134,minneapolis,4,1,7,31,12
+251,1,sherk,146,minneapolis,4,1,7,31,12
+252,1,sherk,160,minneapolis,4,1,7,31,12
+253,1,sherk,2,New York,4,1,7,31,12
+254,1,sherk,24,New York,4,1,7,31,12
+255,1,sherk,57,New York,4,1,7,31,12
+256,1,sherk,45,New York,4,1,7,31,12
+257,1,sherk,50,New York,4,1,7,31,12
+258,1,sherk,65,New York,4,1,7,31,12
+259,1,sherk,74,New York,4,1,7,31,12
+260,1,sherk,95,New York,4,1,7,31,12
+261,1,sherk,97,New York,4,1,7,31,12
+262,1,sherk,102,New York,4,1,7,31,12
+263,1,sherk,125,New York,4,1,7,31,12
+264,1,sherk,143,New York,4,1,7,31,12
+265,1,sherk,145,New York,4,1,7,31,12
+266,1,sherk,152,New York,4,1,7,31,12
+267,1,sherk,1,Seattle,4,1,7,31,12
+268,1,sherk,7,Seattle,4,1,7,31,12
+269,1,sherk,25,Seattle,4,1,7,31,12
+270,1,sherk,32,Seattle,4,1,7,31,12
+271,1,sherk,49,Seattle,4,1,7,31,12
+272,1,sherk,55,Seattle,4,1,7,31,12
+273,1,sherk,73,Seattle,4,1,7,31,12
+274,1,sherk,79,Seattle,4,1,7,31,12
+275,1,sherk,97,Seattle,4,1,7,31,12
+276,1,sherk,103,Seattle,4,1,7,31,12
+277,1,sherk,121,Seattle,4,1,7,31,12
+278,1,sherk,144,Seattle,4,1,7,31,12
+279,1,sherk,156,Seattle,4,1,7,31,12
+280,1,sherk,162,Seattle,4,1,7,31,12
+281,0,spider man,1,chicago,5,1,2,31,8
+282,0,spider man,13,chicago,5,1,2,31,8
+283,0,spider man,29,chicago,5,1,2,31,8
+284,0,spider man,48,chicago,5,1,2,31,8
+285,0,spider man,59,chicago,5,1,2,31,8
+286,0,spider man,71,chicago,5,1,2,31,8
+287,0,spider man,75,chicago,5,1,2,31,8
+288,0,spider man,85,chicago,5,1,2,31,8
+289,0,spider man,100,chicago,5,1,2,31,8
+290,0,spider man,106,chicago,5,1,2,31,8
+291,0,spider man,125,chicago,5,1,2,31,8
+292,0,spider man,135,chicago,5,1,2,31,8
+293,0,spider man,155,chicago,5,1,2,31,8
+294,0,spider man,168,chicago,5,1,2,31,8
+295,0,spider man,1,Dallas,5,1,2,31,8
+296,0,spider man,12,Dallas,5,1,2,31,8
+297,0,spider man,25,Dallas,5,1,2,31,8
+298,0,spider man,36,Dallas,5,1,2,31,8
+299,0,spider man,49,Dallas,5,1,2,31,8
+300,0,spider man,56,Dallas,5,1,2,31,8
+301,0,spider man,73,Dallas,5,1,2,31,8
+302,0,spider man,80,Dallas,5,1,2,31,8
+303,0,spider man,97,Dallas,5,1,2,31,8
+304,0,spider man,110,Dallas,5,1,2,31,8
+305,0,spider man,121,Dallas,5,1,2,31,8
+306,0,spider man,132,Dallas,5,1,2,31,8
+307,0,spider man,145,Dallas,5,1,2,31,8
+308,0,spider man,158,Dallas,5,1,2,31,8
+309,0,spider man,1,minneapolis,5,1,2,31,8
+310,0,spider man,18,minneapolis,5,1,2,31,8
+311,0,spider man,26,minneapolis,5,1,2,31,8
+312,0,spider man,40,minneapolis,5,1,2,31,8
+313,0,spider man,51,minneapolis,5,1,2,31,8
+314,0,spider man,64,minneapolis,5,1,2,31,8
+315,0,spider man,74,minneapolis,5,1,2,31,8
+316,0,spider man,88,minneapolis,5,1,2,31,8
+317,0,spider man,98,minneapolis,5,1,2,31,8
+318,0,spider man,110,minneapolis,5,1,2,31,8
+319,0,spider man,122,minneapolis,5,1,2,31,8
+320,0,spider man,134,minneapolis,5,1,2,31,8
+321,0,spider man,146,minneapolis,5,1,2,31,8
+322,0,spider man,160,minneapolis,5,1,2,31,8
+323,0,spider man,2,New York,5,1,2,31,8
+324,0,spider man,24,New York,5,1,2,31,8
+325,0,spider man,57,New York,5,1,2,31,8
+326,0,spider man,45,New York,5,1,2,31,8
+327,0,spider man,50,New York,5,1,2,31,8
+328,0,spider man,65,New York,5,1,2,31,8
+329,0,spider man,74,New York,5,1,2,31,8
+330,0,spider man,95,New York,5,1,2,31,8
+331,0,spider man,97,New York,5,1,2,31,8
+332,0,spider man,102,New York,5,1,2,31,8
+333,0,spider man,125,New York,5,1,2,31,8
+334,0,spider man,143,New York,5,1,2,31,8
+335,0,spider man,145,New York,5,1,2,31,8
+336,0,spider man,152,New York,5,1,2,31,8
+337,0,spider man,1,Seattle,5,1,2,31,8
+338,0,spider man,7,Seattle,5,1,2,31,8
+339,0,spider man,25,Seattle,5,1,2,31,8
+340,0,spider man,32,Seattle,5,1,2,31,8
+341,0,spider man,49,Seattle,5,1,2,31,8
+342,0,spider man,55,Seattle,5,1,2,31,8
+343,0,spider man,73,Seattle,5,1,2,31,8
+344,0,spider man,79,Seattle,5,1,2,31,8
+345,0,spider man,97,Seattle,5,1,2,31,8
+346,0,spider man,103,Seattle,5,1,2,31,8
+347,0,spider man,121,Seattle,5,1,2,31,8
+348,0,spider man,144,Seattle,5,1,2,31,8
+349,0,spider man,156,Seattle,5,1,2,31,8
+350,0,spider man,162,Seattle,5,1,2,31,8

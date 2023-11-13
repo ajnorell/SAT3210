@@ -288,10 +288,6 @@ try:
             table.add_row(i)
         print(table)
 
-
-
-
-
     start()
 
     cursor.close()
