@@ -249,7 +249,7 @@ try:
                     
                     match usr:
                         case "1":
-                            if usr2 == "add"
+                            if usr2 == "add":
                                 cursor.execute("""
                                     UPDATE training 
                                     SET con_training = 1 
@@ -258,7 +258,7 @@ try:
                                 con.commmit()
                                 var = "T"
 
-                            elif usr2 == "remove"
+                            elif usr2 == "remove":
                                 cursor.execute("""
                                     UPDATE training 
                                     SET con_training = 0 
@@ -271,7 +271,7 @@ try:
                                 print("Invalid add/remove. No data was changed")
 
                         case "2":
-                            if usr2 == "add"
+                            if usr2 == "add":
                                 cursor.execute("""
                                     UPDATE training 
                                     SET tix_training = 1
@@ -280,7 +280,7 @@ try:
                                 con.commmit()
                                 var = "T"
 
-                            elif usr2 == "remove"
+                            elif usr2 == "remove":
                                 cursor.execute("""
                                     UPDATE training 
                                     SET tix_training = 0 
@@ -294,7 +294,7 @@ try:
 
 
                         case "3":
-                            if usr2 == "add"
+                            if usr2 == "add":
                                 cursor.execute("""
                                     UPDATE training 
                                     SET man_training = 1 
@@ -303,7 +303,7 @@ try:
                                 con.commmit()
                                 var = "T"
 
-                            elif usr2 == "remove"
+                            elif usr2 == "remove":
                                 cursor.execute("""
                                     UPDATE training 
                                     SET man_training = 0 
