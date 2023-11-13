@@ -82,21 +82,19 @@ try:
                     rows = cursor.fetchall()
                     for i in rows:
                         if i == usr:
+                            usr = int(usr)
+                            # Update the table
+                            cursor.execute("""
+                                UPDATE employees 
+                                SET loc_ID = ? 
+                                WHERE emp_ID = ?
+                            """, (usr,emp_num))
+                            con.commit()
+                            show_emp()
                             var = "T"
-                            break
-                    if var =="F":
-                        print("That is not a valid Location ID. Please Try again.")
-                        break
-                    
-                    usr = int(usr)
-                    # Update the table
-                    cursor.execute("""
-                        UPDATE employees 
-                        SET loc_ID = ? 
-                        WHERE emp_ID = ?
-                    """, (usr,emp_num))
-                    con.commit()
-                    show_emp()
+
+                    if var == "F":
+                        print("No")    
 
                 case "2": # Role
                     usr = input
