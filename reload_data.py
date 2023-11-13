@@ -13,9 +13,9 @@ try:
         password="P@ssw0rd",
         host="localhost",
         port=3306,
-        database="test2"
+        database="test2" 
     )
-    
+
     cursor = con.cursor()
 
     cursor.execute("""
