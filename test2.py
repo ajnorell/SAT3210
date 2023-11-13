@@ -12,16 +12,30 @@ try:
     )
 
     cursor = con.cursor()
+    global var
+    var = "F"
 
-    cursor.execute("SELECT location loc_id FROM theater",)
-    if cursor.rowcount == 0:
-        print("There are no locations :(")
-    else:
+    while var == "F":
+        usr = input("What is the new location ID of this employee?:")
+        usr = int(usr)
+
+        # Validate user input
+        cursor.execute("SELECT loc_ID FROM theater")
         rows = cursor.fetchall()
-        table = PrettyTable(["Location","Location ID"])
         for i in rows:
-            table.add_row(i)
-        print(table)
+            if var =="F":
+                for j, entry in enumerate(rows):
+                    if usr == entry:
+                        var = "T"
+                        print("Match Found")
+                        break
+            else:
+                break
+        if var =="F":
+            print("That is not a valid Location ID. Please Try again.")
+            break
+
+        
 
 except mariadb.Error as e:
     print(f"Error from mariaDB: {e}")
