@@ -13,12 +13,13 @@ try:
 
     cursor = con.cursor()
 
-
+    usr = input("as")
     # Validate user input
     cursor.execute("SELECT loc_ID FROM theater")
     rows = cursor.fetchall()
     for i in rows:
         print(i)
+        print(usr)
             
         
 
