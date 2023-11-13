@@ -18,8 +18,7 @@ try:
     cursor.execute("SELECT loc_ID FROM theater")
     rows = cursor.fetchall()
     for i in rows:
-        for j, entry in enumerate(rows):
-            print(entry)
+        print(i)
             
         
 
