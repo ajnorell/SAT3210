@@ -81,25 +81,21 @@ try:
                     cursor.execute("SELECT loc_ID FROM theater")
                     rows = cursor.fetchall()
                     for i in rows:
-                        print(usr)
-                        print(i)
-                        if i == usr:
+                        for j, entry in enumerate(i):
+                            if entry == usr:
+                                usr = int(usr)
+                                # Update the table
+                                cursor.execute("""
+                                    UPDATE employees 
+                                    SET loc_ID = ? 
+                                    WHERE emp_ID = ?
+                                """, (usr,emp_num))
+                                con.commit()
+                                show_emp()
+                                var = "T"  
 
-                            print(usr)
-                            print(i)
-                    
-                            '''
-                            usr = int(usr)
-                            # Update the table
-                            cursor.execute("""
-                                UPDATE employees 
-                                SET loc_ID = ? 
-                                WHERE emp_ID = ?
-                            """, (usr,emp_num))
-                            con.commit()
-                            show_emp()
-                            var = "T"
-                            '''   
+                    if var == "F":
+                        print("Not a valid Location ID.")
 
                 case "2": # Role
                     usr = input
