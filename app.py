@@ -64,8 +64,10 @@ try:
 
             if var =="F":
                 print("That is not a valid Employee ID. Please Try again.")
-                rows = []
+                employees()
+
         
+
         var = "F"
 
         
