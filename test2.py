@@ -13,12 +13,13 @@ try:
 
     cursor = con.cursor()
 
-    cursor.execute("SELECT loc_ID FROM theater",)
+    cursor.execute("SELECT loc_ID FROM theater")
     rows = cursor.fetchall()
     usr = 1
 
     for i in rows:
-        print(i)
+        a = int(i)
+        print(a)
         if i == usr:
             print("T")
             
