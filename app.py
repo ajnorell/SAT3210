@@ -48,50 +48,60 @@ try:
         emp_num = input("please enter the ID of the employee you would like to update: ")
 
         
+        while var == "F":
+            match sel:
+                case "1": # Location
+                    usr = input
+                    show_loc()
+                    usr = input("What is the new location_ID of this employee?:")
+                    usr = int(usr)
 
-        match sel:
-            case "1": # Location
-                usr = input
-                show_loc()
-                usr = input("What is the new location_ID of this employee?:")
-
-                cursor.execute("SELECT loc_ID FROM theater")
-                rows = cursor.fetchall()
-                for i in rows:
+                    cursor.execute("SELECT loc_ID FROM theater")
+                    rows = cursor.fetchall()
+                    for i in rows:
+                        global var
+                        if var =="F":
+                            for j, entry in enumerate(rows):
+                                if usr == entry:
+                                    var = "T"
+                                    break
+                        else:
+                            break
                     if var =="F":
-                        for j, entry in enumerate(rows):
-                            if usr == entry:
-                                var = "T"
-                                break
-                    else:
+                        print("That is not a valid Location ID. Please Try again.")
                         break
-                if var =="F":
-                    print("That is not a valid Location ID")
 
-            case "2": # Role
-                print()
+                    cursor.execute("""
+                        UPDATE employees 
+                        SET loc_ID = ? 
+                        WHERE emp_ID = ?
+                    """,(usr,emp_num))
+                    con.commit()
 
-            case "3": # Name
-                print()
+                case "2": # Role
+                    print()
 
-            case "4": # Salary
-                print()
+                case "3": # Name
+                    print()
 
-            case "5": # Acct Num
-                print()
+                case "4": # Salary
+                    print()
 
-            case "6": # Rout Num
-                print()
+                case "5": # Acct Num
+                    print()
 
-            case "7": # Address
-                print()
+                case "6": # Rout Num
+                    print()
 
-            case "8": # Training
-                print()
+                case "7": # Address
+                    print()
 
-            case _:
-                print("Option is not allowed. Please try again.")
-                employees()
+                case "8": # Training
+                    print()
+
+                case _:
+                    print("Option is not allowed. Please try again.")
+                    employees()
 
 
     def concessions():
