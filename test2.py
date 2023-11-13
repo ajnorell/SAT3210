@@ -26,7 +26,7 @@ try:
 
     show_loc()
 
-
+    cursor.execute("SELECT location, loc_ID FROM theater",)
     rows = cursor.fetchall()
     usr = 1
 
