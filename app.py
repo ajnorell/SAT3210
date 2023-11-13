@@ -81,6 +81,8 @@ try:
                     cursor.execute("SELECT loc_ID FROM theater")
                     rows = cursor.fetchall()
                     for i in rows:
+                        print(usr)
+                        print(i)
                         if i == usr:
 
                             print(usr)
