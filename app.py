@@ -242,7 +242,7 @@ try:
                     show_train(emp_ID)
                     
 
-                    print("[1] Concessions Training\n[2] Tickets Training\n[3] Manager Training)
+                    print("[1] Concessions Training\n[2] Tickets Training\n[3] Manager Training")
                     usr = input("Which training would you like to edit?: ")
                     usr2 = input("Would you like to add or remove the training?: ")
                     usr2 = usr2.lower()
