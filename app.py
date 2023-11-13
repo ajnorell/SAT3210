@@ -43,12 +43,12 @@ try:
 
     def employees():
         global var
+        global emp_num
         print("[1] location\n[2] role\n[3] name\n[4] salary\n[5] account number\n[6] routing number\n[7] address\n[8] training\n\n")
         sel = input("What aspect would you like to update?: ")
 
         while var == "F":
             show_emp()
-            global emp_num
             emp_num = input("please enter the ID of the employee you would like to update: ")
 
             cursor.execute("SELECT emp_ID FROM employees")
@@ -64,7 +64,6 @@ try:
 
             if var =="F":
                 print("That is not a valid Employee ID. Please Try again.")
-                employees()
 
         
 
