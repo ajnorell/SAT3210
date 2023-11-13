@@ -42,7 +42,7 @@ try:
 
 
     def employees():
-        
+        global var
         print("[1] location\n[2] role\n[3] name\n[4] salary\n[5] account number\n[6] routing number\n[7] address\n[8] training\n\n")
         sel = input("What aspect would you like to update?: ")
 
@@ -54,7 +54,6 @@ try:
             cursor.execute("SELECT emp_ID FROM employees")
             rows = cursor.fetchall()
             for i in rows:
-                global var
                 if var =="F":
                     for j, entry in enumerate(rows):
                         if emp_num == entry:
