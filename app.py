@@ -82,6 +82,11 @@ try:
                     rows = cursor.fetchall()
                     for i in rows:
                         if i == usr:
+
+                            print(usr)
+                            print(i)
+                    
+                            '''
                             usr = int(usr)
                             # Update the table
                             cursor.execute("""
@@ -92,9 +97,7 @@ try:
                             con.commit()
                             show_emp()
                             var = "T"
-
-                    if var == "F":
-                        print("No")    
+                            '''   
 
                 case "2": # Role
                     usr = input
