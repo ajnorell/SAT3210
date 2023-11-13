@@ -81,11 +81,8 @@ try:
                     cursor.execute("SELECT loc_ID FROM theater")
                     rows = cursor.fetchall()
                     for i in rows:
-                        while var == "F":
-                            if i == usr:
-                                var = "T"
-                                break
-                        if var == "T":
+                        if i == usr:
+                            var = "T"
                             break
                     if var =="F":
                         print("That is not a valid Location ID. Please Try again.")
