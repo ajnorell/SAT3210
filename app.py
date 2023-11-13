@@ -84,6 +84,7 @@ try:
                         while var == "F":
                             if i == usr:
                                 var = "T"
+                                break
                         if var == "T":
                             break
                     if var =="F":
@@ -96,8 +97,7 @@ try:
                         UPDATE employees 
                         SET loc_ID = ? 
                         WHERE emp_ID = ?
-                    """,
-                    (usr,emp_num))
+                    """, (usr,emp_num))
                     con.commit()
                     show_emp()
 
