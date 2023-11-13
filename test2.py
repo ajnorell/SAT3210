@@ -32,6 +32,8 @@ try:
 
     for i in rows:
         print(i)
+        if i == usr:
+            print("T")
             
         
 
