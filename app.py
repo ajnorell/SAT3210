@@ -75,7 +75,7 @@ try:
 #TODO Input Location vs Loc_ID
                     usr = input
                     show_loc()
-                    usr = input("What is the new location ID of this employee?:")
+                    usr = str(input("What is the new location ID of this employee?:"))
 
                     # Validate user input
                     cursor.execute("SELECT loc_ID FROM theater")
