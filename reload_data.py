@@ -19,7 +19,7 @@ try:
     cursor = con.cursor()
 
     cursor.execute("""
-        LOAD DATA INFILE '/home/sat3210/SAT3210/theater.csv'
+        LOAD DATA LOCAL INFILE '/home/sat3210/SAT3210/theater.csv'
         REPLACE INTO TABLE theater
         FIELDS TERMINATED BY ','
         IGNORE 1 LINES
@@ -27,7 +27,7 @@ try:
     con.commit()
 
     cursor.execute("""
-        LOAD DATA INFILE '/home/sat3210/SAT3210/employees.csv'
+        LOAD DATA LOCAL INFILE '/home/sat3210/SAT3210/employees.csv'
         REPLACE INTO TABLE employees
         FIELDS TERMINATED BY ','
         IGNORE 1 LINES
@@ -35,7 +35,7 @@ try:
     con.commit()
 
     cursor.execute("""
-        LOAD DATA INFILE '/home/sat3210/SAT3210/concessions.csv'
+        LOAD DATA LOCAL INFILE '/home/sat3210/SAT3210/concessions.csv'
         REPLACE INTO TABLE concessions
         FIELDS TERMINATED BY ','
         IGNORE 1 LINES
@@ -43,7 +43,7 @@ try:
     con.commit()
 
     cursor.execute("""
-        LOAD DATA INFILE '/home/sat3210/SAT3210/time_slot.csv'
+        LOAD DATA LOCAL INFILE '/home/sat3210/SAT3210/time_slot.csv'
         REPLACE INTO TABLE time_)slot
         FIELDS TERMINATED BY ','
         IGNORE 1 LINES
@@ -51,7 +51,7 @@ try:
     con.commit()
 
     cursor.execute("""
-        LOAD DATA INFILE '/home/sat3210/SAT3210/payroll.csv'
+        LOAD DATA LOCAL INFILE '/home/sat3210/SAT3210/payroll.csv'
         REPLACE INTO TABLE payroll
         FIELDS TERMINATED BY ','
         IGNORE 1 LINES
@@ -59,7 +59,7 @@ try:
     con.commit()
 
     cursor.execute("""
-        LOAD DATA INFILE '/home/sat3210/SAT3210/screens.csv'
+        LOAD DATA LOCAL INFILE '/home/sat3210/SAT3210/screens.csv'
         REPLACE INTO TABLE screens
         FIELDS TERMINATED BY ','
         IGNORE 1 LINES
@@ -67,7 +67,7 @@ try:
     con.commit()
 
     cursor.execute("""
-        LOAD DATA INFILE '/home/sat3210/SAT3210/movies.csv'
+        LOAD DATA LOCAL INFILE '/home/sat3210/SAT3210/movies.csv'
         REPLACE INTO TABLE movies
         FIELDS TERMINATED BY ','
         IGNORE 1 LINES
@@ -75,7 +75,7 @@ try:
     con.commit()
 
     cursor.execute("""
-        LOAD DATA INFILE '/home/sat3210/SAT3210/training.csv'
+        LOAD DATA LOCAL INFILE '/home/sat3210/SAT3210/training.csv'
         REPLACE INTO TABLE training
         FIELDS TERMINATED BY ','
         IGNORE 1 LINES
