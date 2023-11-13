@@ -20,7 +20,7 @@ try:
         password="P@ssw0rd",
         host="localhost",
         port=3306,
-        database="school"
+        database="prod"
     )
 
     cursor = con.cursor()
