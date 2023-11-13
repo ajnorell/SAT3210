@@ -25,6 +25,13 @@ try:
             print(table)
 
     show_loc()
+
+
+    rows = cursor.fetchall()
+    usr = 1
+
+    for i in rows:
+        print(i)
             
         
 
