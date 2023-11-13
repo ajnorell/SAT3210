@@ -231,8 +231,8 @@ try:
 
                 case "8": # Training
 # TODO Check boolean values are correct
-                    global emp_ID
-                    show_train(emp_ID)
+                    global emp_num
+                    show_train(emp_num)
                     
 
                     print("[1] Concessions Training\n[2] Tickets Training\n[3] Manager Training")
@@ -247,7 +247,7 @@ try:
                                     UPDATE training 
                                     SET con_training = 1 
                                     WHERE emp_ID == ?
-                                """,(emp_ID))
+                                """,(emp_num))
                                 con.commmit()
                                 var = "T"
 
@@ -256,7 +256,7 @@ try:
                                     UPDATE training 
                                     SET con_training = 0 
                                     WHERE emp_ID == ?
-                                """,(emp_ID))
+                                """,(emp_num))
                                 con.commmit()
                                 var = "T"
 
@@ -269,7 +269,7 @@ try:
                                     UPDATE training 
                                     SET tix_training = 1
                                     WHERE emp_ID == ?
-                                """,(emp_ID))
+                                """,(emp_num))
                                 con.commmit()
                                 var = "T"
 
@@ -278,7 +278,7 @@ try:
                                     UPDATE training 
                                     SET tix_training = 0 
                                     WHERE emp_ID == ?
-                                """,(emp_ID))
+                                """,(emp_num))
                                 con.commmit()
                                 var = "T"
 
@@ -292,7 +292,7 @@ try:
                                     UPDATE training 
                                     SET man_training = 1 
                                     WHERE emp_ID == ?
-                                """,(emp_ID))
+                                """,(emp_num))
                                 con.commmit()
                                 var = "T"
 
@@ -301,7 +301,7 @@ try:
                                     UPDATE training 
                                     SET man_training = 0 
                                     WHERE emp_ID == ?
-                                """,(emp_ID))
+                                """,(emp_num))
                                 con.commmit()
                                 var = "T"
 
