@@ -81,7 +81,6 @@ try:
                     cursor.execute("SELECT loc_ID FROM theater")
                     rows = cursor.fetchall()
                     for i in rows:
-                        global var
                         if var =="F":
                             for j, entry in enumerate(rows):
                                 if usr == entry:
@@ -118,7 +117,6 @@ try:
                         """,
                         (usr,emp_num))
                         con.commit()
-                        global var
                         var = "T"
 
                     else:
@@ -140,7 +138,6 @@ try:
                         """,
                         (usr,emp_num))
                         con.commit()
-                        global var
                         var = "T"
 
                     else:
@@ -182,7 +179,6 @@ try:
                         """,
                         (usr,emp_num))
                         con.commit()
-                        global var
                         var = "T"
 
                     else:
@@ -205,7 +201,6 @@ try:
                         """,
                         (usr,emp_num))
                         con.commit()
-                        global var
                         var = "T"
 
                     else:
@@ -228,7 +223,6 @@ try:
                         """,
                         (usr,emp_num))
                         con.commit()
-                        global var
                         var = "T"
 
                     else:
