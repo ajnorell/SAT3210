@@ -64,7 +64,6 @@ try:
 #TODO Always prints this statement for some reason
             if var =="F":
                 print("That is not a valid Employee ID. Please Try again.")
-                break
         
         var = "F"
 
