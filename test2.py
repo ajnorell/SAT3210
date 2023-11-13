@@ -17,9 +17,7 @@ try:
     # Validate user input
     cursor.execute("SELECT loc_ID FROM theater")
     rows = cursor.fetchall()
-    for i in rows:
-        print(i)
-        print(usr)
+    print(rows)
             
         
 
