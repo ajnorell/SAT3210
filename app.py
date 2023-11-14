@@ -352,7 +352,8 @@ try:
             print(table)
 
     def show_pay(emp):
-        cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees ON emp_ID WHERE emp_ID == ?", (emp))
+#TODO Remove Natural Join
+        cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll NATURAL JOIN employees WHERE emp_ID == ?", (emp))
         rows = cursor.fetchall()
         table = PrettyTable(["Name", "Employee ID", "Salary", "Account Number", "Routing Number", "Address"])
         for i in rows:
