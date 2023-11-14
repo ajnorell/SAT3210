@@ -4,7 +4,6 @@
 #ajnorell, ikgatti, ajurewic
 #Mariadb
 
-
 import mariadb
 import sys
 from prettytable import PrettyTable
@@ -12,7 +11,6 @@ from prettytable import PrettyTable
 global var
 global emp_num
 var ="F"
-
 
 try:
     con = mariadb.connect(
@@ -42,7 +40,6 @@ try:
             case _:
                 print("Option is not allowed. Please try again.")
                 start()
-
 
     def employees():
         global var
@@ -209,7 +206,6 @@ try:
                     else:
                         print("That is not the right amount of characters, Please change the number of characters to 13.")
                 
-
                 case "7": # Address
                     show_pay(emp_num)
                     usr = input("What is the new address for this employee?:")
@@ -230,9 +226,7 @@ try:
                     else:
                         print("That is too many characters, Please reduce the number of characters to 50 or less.")
                 
-
                 case "8": # Training
-
                     show_train(emp_num)
                     
                     print("[1] Concessions Training\n[2] Tickets Training\n[3] Manager Training")
@@ -240,7 +234,6 @@ try:
                     usr2 = input("Would you like to add or remove the training?: ")
                     usr2 = usr2.lower()
                     
-
                     match usr:
                         case "1":
                             if usr2 == "add":
@@ -317,7 +310,6 @@ try:
                     print("Option is not allowed. Please try again.")
                     employees()
 
-
     def concessions():
         global var
         print("[1] Add concessions\n[2] remove concessions\n[3] update an item\n")
@@ -352,7 +344,6 @@ try:
                 sel2 = input("What is the name of item you want to edit?: ")
                 print("[1] Type\n[2] Item\n[3] Price\n")
                 sel1 = input("What would you like to update?:" )
-
 
                 match sel1:
                     case "1":
