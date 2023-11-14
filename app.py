@@ -315,7 +315,79 @@ try:
 
 
     def concessions():
-        print()
+        global var
+        print("[1] Add concessions\n[2] remove concessions\n[3] update an item\n")
+        sel = input("What would you like to update?: ")
+
+        match sel:
+            case "1":
+                usr = input("Where is the type of item offered? (Basic, Full, Restaurant): ")
+                usr2 = input("What is the name of the item?: ")
+                usr3 = input("What is the price of the item?: ")
+
+                cursor.execute("""
+                INSERT INTO concessions 
+                VALUES(?,?,?)
+                """,(usr,usr2,usr3))
+                con.commit()
+                show_con()
+
+            case "2":
+                show_con()
+                usr = input("What is the name of item to remove?:")
+                cursor.execute("""
+                DELETE FROM concessions
+                WHERE item == ?
+                """,(usr))
+                con.commit()
+
+            case "3":
+                show_con()
+                sel2 = input("What is the name of item you want to edit?: ")
+                print("[1] Type\n[2] Item\n[3] Price\n")
+                sel1 = input("What would you like to update?:" )
+
+
+                match sel1:
+                    case "1":
+                        usr = input("Where is the type of item offered? (Basic, Full, Restaurant): ")
+                        cursor.execute("""
+                        UPDATE concessions
+                        SET type = ?
+                        WHERE item == ?
+                        """,(usr, sel2))
+                        con.commit()
+                        show_con()
+                    
+                    case "2":
+                        usr = input("What is the new name of the item?: ")
+                        cursor.execute("""
+                        UPDATE concessions
+                        SET item = ?
+                        WHERE item == ?
+                        """,(usr, sel2))
+                        con.commit()
+                        show_con()
+
+                    case "3":
+                        usr = input("What is the new price of the item?: ")
+                        cursor.execute("""
+                        UPDATE concessions
+                        SET price = ?
+                        WHERE item == ?
+                        """,(usr, sel2))
+                        con.commit()
+                        show_con()
+                        
+                    case _:
+                        print("Option is not allowed. Please try again.")
+                        concessions()
+                    
+            case _:
+                print("Option is not allowed. Please try again.")
+                concessions()
+
+
 
     def show_emp():
 #TODO Show location vs location ID
@@ -351,8 +423,9 @@ try:
                 table.add_row(i)
             print(table)
 
+#FIXME: TODO
     def show_pay(emp):
-        cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID) WHERE emp_ID == ?", (emp))
+        cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (?)", (emp))
         rows = cursor.fetchall()
         table = PrettyTable(["Name", "Employee ID", "Salary", "Account Number", "Routing Number", "Address"])
         for i in rows:
