@@ -11,10 +11,9 @@ try:
         database="prod"
     )
 
-    emp = "1"
-    emp = int(emp)
+
     cursor = con.cursor()
-    cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID) WHERE emp_ID == ?", (emp))
+    cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID)")
     rows = cursor.fetchall()
     table = PrettyTable(["Name", "Employee ID", "Salary", "Account Number", "Routing Number", "Address"])
     for i in rows:
