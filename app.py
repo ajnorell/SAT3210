@@ -240,7 +240,7 @@ try:
                                     SET con_training = 1 
                                     WHERE emp_ID = ?
                                 """,(emp_ID))
-                                con.commmit()
+                                con.commit()
                                 var = "T"
 
                             elif usr2 == "remove":
@@ -249,7 +249,7 @@ try:
                                     SET con_training = 0 
                                     WHERE emp_ID = ?
                                 """,(emp_ID))
-                                con.commmit()
+                                con.commit()
                                 var = "T"
 
                             else:
@@ -262,7 +262,7 @@ try:
                                     SET tix_training = 1
                                     WHERE emp_ID = ?
                                 """,(emp_ID))
-                                con.commmit()
+                                con.commit()
                                 var = "T"
 
                             elif usr2 == "remove":
@@ -271,7 +271,7 @@ try:
                                     SET tix_training = 0 
                                     WHERE emp_ID = ?
                                 """,(emp_ID))
-                                con.commmit()
+                                con.commit()
                                 var = "T"
 
                             else:
@@ -284,7 +284,7 @@ try:
                                     SET man_training = 1 
                                     WHERE emp_ID = ?
                                 """,(emp_ID))
-                                con.commmit()
+                                con.commit()
                                 var = "T"
 
                             elif usr2 == "remove":
@@ -293,7 +293,7 @@ try:
                                     SET man_training = 0 
                                     WHERE emp_ID = ?
                                 """,(emp_ID))
-                                con.commmit()
+                                con.commit()
                                 var = "T"
 
                             else:
