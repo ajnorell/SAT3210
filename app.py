@@ -461,7 +461,7 @@ try:
                 print(table)
 
             case "4":
-                cursor.execute("SELECT now_showing, title, time_slot_ID, loc_ID, screen_ID, start_date, start_month, end_date, end_month FROM movies LIMIT 1")
+                cursor.execute("SELECT now_showing, title, time_slot_ID, loc_ID, screen_ID, start_date, start_month, end_date, end_month FROM movies LIMIT 10")
                 if cursor.rowcount == 0:
                     print("There are no movies :(")
                 else:
