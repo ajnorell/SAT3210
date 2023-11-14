@@ -387,7 +387,7 @@ try:
 
 
     def show_emp():
-        cursor.execute("SELECT emp_ID, name, role, location FROM employees NATURAL JOIN theater ODER BY emp_ID",)
+        cursor.execute("SELECT emp_ID, name, role, location FROM employees NATURAL JOIN theater ORDER BY emp_ID",)
         if cursor.rowcount == 0:
             print("There is no one employed :(")
         else:
