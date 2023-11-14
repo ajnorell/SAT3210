@@ -102,7 +102,6 @@ try:
                     show_emp()
                     usr = input("What is the new Role of this employee?:")
 
-
                     # Validate user input
                     if len(usr) <= 13:
                         # Update the table
@@ -141,7 +140,6 @@ try:
                     else:
                         print("That is too many characters, Please reduce the number of characters to 50 or less.")
                 
-
                 case "4": # Salary
                     show_pay()
                     usr = input("What is the new Salary of this employee?:")
@@ -149,7 +147,6 @@ try:
 
                     # Validate user input
 #TODO
-                    
                     # Update the table
                     cursor.execute("""
                         UPDATE payroll 
@@ -163,7 +160,6 @@ try:
                     show_pay()
                     usr = input("What is the new account number for this employee?:")
                     
-
                     # Validate user input
                     if len(usr) <= 13:
                         usr = int(usr)
@@ -185,7 +181,6 @@ try:
                     show_pay()
                     usr = input("What is the new routing number for this employee?:")
                     
-
                     # Validate user input
                     if len(usr) <= 13:
                         usr = int(usr)
@@ -208,7 +203,6 @@ try:
                     show_pay()
                     usr = input("What is the new address for this employee?:")
 
-
                     # Validate user input
                     if len(usr) <= 50:
                         # Update the table
@@ -230,7 +224,6 @@ try:
 # TODO Check boolean values are correct
                     show_train()
                     
-
                     print("[1] Concessions Training\n[2] Tickets Training\n[3] Manager Training")
                     usr = input("Which training would you like to edit?: ")
                     usr2 = input("Would you like to add or remove the training?: ")
