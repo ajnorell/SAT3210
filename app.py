@@ -336,8 +336,6 @@ try:
                 continue_del = input("Should item be deleted (type y for yes): ")
                 if continue_del == 'y':
                     
-                    continue_del = input("Should " +i[1]+"(ID = "+i[0]+") be deleted (type y for yes): ")
-                    
                     cursor.execute("""
                     DELETE FROM concessions
                     WHERE item = ?
