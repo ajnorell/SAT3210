@@ -140,12 +140,12 @@ try:
                         print("That is too many characters, Please reduce the number of characters to 50 or less.")
                 
                 case "4": # Salary
-                    show_pay(emp_num)
-                    usr = input("What is the new Salary of this employee?:")
                     var2 = "F"
 
                     # Validate user input
                     while var == "F":
+                        show_pay(emp_num)
+                        usr = input("What is the new Salary of this employee?:")
                         if usr.__contains__("."):
                             if len(usr.rsplit(".")[-1]) == 1:  
                                 if len(usr) <= 4:
@@ -439,7 +439,7 @@ try:
 
     def show_train(emp_num):
 # TODO Make boolean readable
-        cursor.execute("SELECT * FROM training WHERE emp_ID = ?",(emp_num))
+        cursor.execute("SELECT * FROM training WHERE emp_ID = ?",(emp_num,))
         rows = cursor.fetchall()
         table = PrettyTable(["Employee ID", "Concessions Training", "Ticket Training", "Manager Training"])
         for i in rows:
