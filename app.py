@@ -143,7 +143,6 @@ try:
                 
 
                 case "4": # Salary
-                    usr = input
                     show_pay(emp_num)
                     usr = input("What is the new Salary of this employee?:")
                     usr = float(usr)
@@ -161,7 +160,6 @@ try:
                     con.commit()
 
                 case "5": # Acct Num
-                    usr = input
                     show_pay(emp_num)
                     usr = input("What is the new account number for this employee?:")
                     
@@ -184,7 +182,6 @@ try:
                         print("That is too many characters, Please reduce the number of characters to 13 or less.")
                 
                 case "6": # Rout Num
-                    usr = input
                     show_pay(emp_num)
                     usr = input("What is the new routing number for this employee?:")
                     
@@ -208,7 +205,6 @@ try:
                 
 
                 case "7": # Address
-                    usr = input
                     show_pay(emp_num)
                     usr = input("What is the new address for this employee?:")
 
