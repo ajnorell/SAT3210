@@ -331,11 +331,11 @@ try:
             case "2":
                 show_con()
                 usr = input("What is the name of item to remove?:")
-                usr = tuple(usr)
+                usr2 = tuple(usr)
                 cursor.execute("""
                 DELETE FROM concessions
                 WHERE item = ?
-                """,(usr))
+                """,(usr2))
                 con.commit()
 
             case "3":
@@ -346,7 +346,6 @@ try:
 
 
                 match sel1:
-#FIXME:TODO
                     case "1":
                         usr = input("Where is the type of item offered? (Basic, Full, Restaurant): ")
                         cursor.execute("""
