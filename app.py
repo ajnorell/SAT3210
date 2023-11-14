@@ -49,6 +49,7 @@ try:
 #FIXME:TODO fix validation
         show_emp()
         emp_num = input("please enter the ID of the employee you would like to update. Dont mess it up: ")
+        emp_ID = tuple(emp_num)
 
         #cursor.execute("SELECT emp_ID FROM employees")
         #rows = cursor.fetchall()
@@ -229,7 +230,7 @@ try:
                     usr = input("Which training would you like to edit?: ")
                     usr2 = input("Would you like to add or remove the training?: ")
                     usr2 = usr2.lower()
-
+                    
 
                     match usr:
                         case "1":
@@ -238,7 +239,7 @@ try:
                                     UPDATE training 
                                     SET con_training = 1 
                                     WHERE emp_ID = ?
-                                """,(emp_num))
+                                """,(emp_ID))
                                 con.commmit()
                                 var = "T"
 
@@ -247,7 +248,7 @@ try:
                                     UPDATE training 
                                     SET con_training = 0 
                                     WHERE emp_ID = ?
-                                """,(emp_num))
+                                """,(emp_ID))
                                 con.commmit()
                                 var = "T"
 
@@ -260,7 +261,7 @@ try:
                                     UPDATE training 
                                     SET tix_training = 1
                                     WHERE emp_ID = ?
-                                """,(emp_num))
+                                """,(emp_ID))
                                 con.commmit()
                                 var = "T"
 
@@ -269,7 +270,7 @@ try:
                                     UPDATE training 
                                     SET tix_training = 0 
                                     WHERE emp_ID = ?
-                                """,(emp_num))
+                                """,(emp_ID))
                                 con.commmit()
                                 var = "T"
 
@@ -282,7 +283,7 @@ try:
                                     UPDATE training 
                                     SET man_training = 1 
                                     WHERE emp_ID = ?
-                                """,(emp_num))
+                                """,(emp_ID))
                                 con.commmit()
                                 var = "T"
 
@@ -291,7 +292,7 @@ try:
                                     UPDATE training 
                                     SET man_training = 0 
                                     WHERE emp_ID = ?
-                                """,(emp_num))
+                                """,(emp_ID))
                                 con.commmit()
                                 var = "T"
 
