@@ -228,7 +228,7 @@ try:
 
                 case "8": # Training
 # TODO Check boolean values are correct
-                    show_train(emp_num)
+                    show_train()
                     
 
                     print("[1] Concessions Training\n[2] Tickets Training\n[3] Manager Training")
@@ -307,7 +307,7 @@ try:
                         case _:
                             print("That is not  a valid option, Please try again.")
 
-                    show_train(emp_num)
+                    show_train()
 
                 case _:
                     print("Option is not allowed. Please try again.")
@@ -423,7 +423,7 @@ try:
                 table.add_row(i)
             print(table)
 
-#FIXME: TODO
+# TODO Filter by employee
     def show_pay():
         cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID)")
         rows = cursor.fetchall()
@@ -432,10 +432,10 @@ try:
             table.add_row(i)
         print(table)
 
-#FIXME: TODO
-    def show_train(emp):
+ # TODO Filter by employee
+    def show_train():
 # TODO Make boolean readable
-        cursor.execute("SELECT * FROM training WHERE emp_ID == ?", (emp))
+        cursor.execute("SELECT * FROM training")
         rows = cursor.fetchall()
         table = PrettyTable(["Employee ID", "Concessions Training", "Ticket Training", "Manager Training"])
         for i in rows:
@@ -445,11 +445,7 @@ try:
 
 
     try:
-        show_train(1)
-        show_pay()
-        show_emp()
-        show_con()
-        show_loc()
+        show_train()
     except:
         print("A error occured")
 
