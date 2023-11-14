@@ -330,9 +330,10 @@ try:
             case "2":
                 show_con()
                 usr = input("What is the name of item to remove?:")
+                usr = tuple(usr)
                 cursor.execute("""
                 DELETE FROM concessions
-                WHERE item == ?
+                WHERE item = ?
                 """,(usr))
                 con.commit()
 
