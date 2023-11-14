@@ -332,11 +332,17 @@ try:
                 show_con()
                 sel3 = input("What is the name of item to remove?:")
                 sel3 = tuple(sel3)
-                cursor.execute("""
-                DELETE FROM concessions
-                WHERE item = ?
-                """,(sel3))
-                con.commit()
+
+                continue_del = input("Should item be deleted (type y for yes): ")
+                if continue_del == 'y':
+                    
+                    continue_del = input("Should " +i[1]+"(ID = "+i[0]+") be deleted (type y for yes): ")
+                    
+                    cursor.execute("""
+                    DELETE FROM concessions
+                    WHERE item = ?
+                    """,(sel3))
+                    con.commit()
 
             case "3":
                 show_con()
