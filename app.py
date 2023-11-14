@@ -49,6 +49,7 @@ try:
 #TODO fix validation
         show_emp()
         emp_num = input("please enter the ID of the employee you would like to update. Dont mess it up: ")
+        emp_ID = (emp_num)
 
         #cursor.execute("SELECT emp_ID FROM employees")
         #rows = cursor.fetchall()
@@ -155,6 +156,7 @@ try:
                     """,
                     (usr,emp_num))
                     con.commit()
+                    var = "T"
 
                 case "5": # Acct Num
                     show_pay()
@@ -236,7 +238,7 @@ try:
                                     UPDATE training 
                                     SET con_training = 1 
                                     WHERE emp_ID == ?
-                                """,(emp_num))
+                                """,(emp_ID))
                                 con.commmit()
                                 var = "T"
 
@@ -245,7 +247,7 @@ try:
                                     UPDATE training 
                                     SET con_training = 0 
                                     WHERE emp_ID == ?
-                                """,(emp_num))
+                                """,(emp_ID))
                                 con.commmit()
                                 var = "T"
 
@@ -273,7 +275,6 @@ try:
 
                             else:
                                 print("Invalid add/remove. No data was changed")
-
 
                         case "3":
                             if usr2 == "add":
