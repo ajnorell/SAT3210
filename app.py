@@ -26,7 +26,7 @@ try:
     cursor = con.cursor()
        
     def start():
-        print("[1] employees\n[2] concessions")
+        print("[1] Edit Employees\n[2] Edit Concessions\n[3] Show Tables")
         sel = input("Which one would you like to update?: ")
 
         match sel:
@@ -35,6 +35,9 @@ try:
 
             case "2":
                 concessions()
+
+            case "3":
+                show()
 
             case _:
                 print("Option is not allowed. Please try again.")
@@ -46,7 +49,6 @@ try:
         global emp_num
         print("[1] location\n[2] role\n[3] name\n[4] salary\n[5] account number\n[6] routing number\n[7] address\n[8] training\n\n")
         sel = input("What aspect would you like to update?: ")
-#FIXME:TODO fix validation
 
         while var == "F":
             show_emp()
@@ -62,9 +64,8 @@ try:
                 if var == "T":
                     break
             if var == "F":
-                print("Not a valid Location ID.")
+                print("Not a valid Employee ID.")
             
-
         var = "F"
 
         while var == "F":
@@ -139,7 +140,7 @@ try:
                         print("That is too many characters, Please reduce the number of characters to 50 or less.")
                 
                 case "4": # Salary
-                    show_pay()
+                    show_pay(emp_num)
                     usr = input("What is the new Salary of this employee?:")
                     usr = float(usr)
 
@@ -156,7 +157,7 @@ try:
                     var = "T"
 
                 case "5": # Acct Num
-                    show_pay()
+                    show_pay(emp_num)
                     usr = input("What is the new account number for this employee?:")
                     
                     # Validate user input
@@ -171,13 +172,13 @@ try:
                         (usr,emp_num))
                         con.commit()
                         var = "T"
-                        show_pay()
+                        show_pay(emp_num)
 
                     else:
                         print("That is too many characters, Please reduce the number of characters to 13 or less.")
                 
                 case "6": # Rout Num
-                    show_pay()
+                    show_pay(emp_num)
                     usr = input("What is the new routing number for this employee?:")
                     
                     # Validate user input
@@ -192,14 +193,14 @@ try:
                         (usr,emp_num))
                         con.commit()
                         var = "T"
-                        show_pay()
+                        show_pay(emp_num)
 
                     else:
                         print("That is too many characters, Please reduce the number of characters to 13 or less.")
                 
 
                 case "7": # Address
-                    show_pay()
+                    show_pay(emp_num)
                     usr = input("What is the new address for this employee?:")
 
                     # Validate user input
@@ -213,14 +214,14 @@ try:
                         (usr,emp_num))
                         con.commit()
                         var = "T"
-                        show_pay()
+                        show_pay(emp_num)
 
                     else:
                         print("That is too many characters, Please reduce the number of characters to 50 or less.")
                 
 
                 case "8": # Training
-# TODO Check boolean values are correct
+
                     show_train()
                     
                     print("[1] Concessions Training\n[2] Tickets Training\n[3] Manager Training")
@@ -417,8 +418,8 @@ try:
             print(table)
 
 # TODO Filter by employee
-    def show_pay():
-        cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID)")
+    def show_pay(emp_num):
+        cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID) WHERE emp_ID = ?",(emp_num,))
         rows = cursor.fetchall()
         table = PrettyTable(["Name", "Employee ID", "Salary", "Account Number", "Routing Number", "Address"])
         for i in rows:
@@ -434,6 +435,24 @@ try:
         for i in rows:
             table.add_row(i)
         print(table)
+
+    def show():
+        print("[1] Employees\n[2] Payroll\n[3] Trainings\n[4] Movies\n[5] Concessions")
+        sel = input("Which table would you like to show?: ")
+
+        match sel:
+            case "1":
+                print()
+            case "2":
+                print()
+            case "3":
+                print()
+            case "4":
+                print()
+            case "5":
+                print()
+            case _:
+                print()
 
 
 
