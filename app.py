@@ -442,17 +442,52 @@ try:
 
         match sel:
             case "1":
-                print()
+                cursor.execute("SELECT * FROM employees")
+                rows = cursor.fetchall()
+                table = PrettyTable(["Employee ID", "Location ID", "Role", "Name"])
+                for i in rows:
+                    table.add_row(i)
+                print(table)
+
             case "2":
-                print()
+                cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID)")
+                rows = cursor.fetchall()
+                table = PrettyTable(["Name", "Employee ID", "Salary", "Account Number", "Routing Number", "Address"])
+                for i in rows:
+                    table.add_row(i)
+                print(table)
+
             case "3":
-                print()
+                cursor.execute("SELECT * FROM training")
+                rows = cursor.fetchall()
+                table = PrettyTable(["Employee ID", "Concessions Training", "Ticket Training", "Manager Training"])
+                for i in rows:
+                    table.add_row(i)
+                print(table)
+
             case "4":
-                print()
+                cursor.execute("SELECT now_showing, title, time_slot_ID, loc_ID, screen_ID, start_date, start_month, end_date, end_month FROM movies",)
+                if cursor.rowcount == 0:
+                    print("There are no movies :(")
+                else:
+                    rows = cursor.fetchall()
+                    table = PrettyTable(["Now Showing","Title","Time Slot", "Location ID", "Screen ID", "Start Date", "Start Month", "End Day", "End Month"])
+                    for i in rows:
+                        table.add_row(i)
+                    print(table)
             case "5":
-                print()
+                cursor.execute("SELECT * FROM concessions",)
+                if cursor.rowcount == 0:
+                    print("There is no food :(")
+                else:
+                    rows = cursor.fetchall()
+                    table = PrettyTable(["Type","Item","Price"])
+                    for i in rows:
+                        table.add_row(i)
+                    print(table)
             case _:
-                print()
+                print("That is not a valid option Please Try Again")
+                show()
 
 
 
