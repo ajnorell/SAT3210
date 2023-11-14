@@ -333,14 +333,11 @@ try:
                 sel3 = input("What is the name of item to remove?:")
                 sel3 = tuple(sel3)
 
-                continue_del = input("Should item be deleted (type y for yes): ")
-                if continue_del == 'y':
-                    
-                    cursor.execute("""
-                    DELETE FROM concessions
-                    WHERE item = ?
-                    """,(sel3))
-                    con.commit()
+                cursor.execute("""
+                DELETE FROM concessions
+                WHERE item = ?
+                """,(sel3))
+                con.commit()
 
             case "3":
                 show_con()
