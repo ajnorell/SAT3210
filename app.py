@@ -46,10 +46,9 @@ try:
         global emp_num
         print("[1] location\n[2] role\n[3] name\n[4] salary\n[5] account number\n[6] routing number\n[7] address\n[8] training\n\n")
         sel = input("What aspect would you like to update?: ")
-#TODO fix validation
+#FIXME:TODO fix validation
         show_emp()
         emp_num = input("please enter the ID of the employee you would like to update. Dont mess it up: ")
-        emp_ID = (emp_num)
 
         #cursor.execute("SELECT emp_ID FROM employees")
         #rows = cursor.fetchall()
@@ -230,6 +229,7 @@ try:
                     usr = input("Which training would you like to edit?: ")
                     usr2 = input("Would you like to add or remove the training?: ")
                     usr2 = usr2.lower()
+                    emp_ID = tuple(emp_num)
                     
                     match usr:
                         case "1":
