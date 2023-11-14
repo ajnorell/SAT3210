@@ -327,15 +327,15 @@ try:
                 con.commit()
                 show_con()
 
-#FIXME:TODO
+#FIXME:TODO Statement (1) doesn't match the number of data elements (3)
             case "2":
                 show_con()
                 usr = input("What is the name of item to remove?:")
-                usr2 = tuple(usr)
+                usr = tuple(usr)
                 cursor.execute("""
                 DELETE FROM concessions
                 WHERE item = ?
-                """,(usr2))
+                """,(usr))
                 con.commit()
 
             case "3":
