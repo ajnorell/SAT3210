@@ -142,10 +142,20 @@ try:
                 case "4": # Salary
                     show_pay(emp_num)
                     usr = input("What is the new Salary of this employee?:")
-                    usr = float(usr)
+                    var2 = "F"
 
                     # Validate user input
-#TODO
+                    while var == "F":
+                        if usr.__contains__("."):
+                            if len(usr.rsplit(".")[-1]) == 1:  
+                                if len(usr) <= 4:
+                                    var = "T"
+                            elif len(usr.rsplit(".")[-1]) == 2:
+                                if len(usr) <=5:
+                                    var = "T"  
+                        elif len(usr) <= 2:
+                            var = "T"
+
                     # Update the table
                     cursor.execute("""
                         UPDATE payroll 
@@ -154,6 +164,7 @@ try:
                     """,
                     (usr,emp_num))
                     con.commit()
+                    show_pay(emp_num)
                     var = "T"
 
                 case "5": # Acct Num
@@ -161,7 +172,7 @@ try:
                     usr = input("What is the new account number for this employee?:")
                     
                     # Validate user input
-                    if len(usr) <= 13:
+                    if len(usr) == 13:
                         usr = int(usr)
                         # Update the table
                         cursor.execute("""
@@ -175,14 +186,14 @@ try:
                         show_pay(emp_num)
 
                     else:
-                        print("That is too many characters, Please reduce the number of characters to 13 or less.")
+                        print("That is not the right amount of characters, Please change the number of characters to 13.")
                 
                 case "6": # Rout Num
                     show_pay(emp_num)
                     usr = input("What is the new routing number for this employee?:")
                     
                     # Validate user input
-                    if len(usr) <= 13:
+                    if len(usr) == 13:
                         usr = int(usr)
                         # Update the table
                         cursor.execute("""
@@ -196,7 +207,7 @@ try:
                         show_pay(emp_num)
 
                     else:
-                        print("That is too many characters, Please reduce the number of characters to 13 or less.")
+                        print("That is not the right amount of characters, Please change the number of characters to 13.")
                 
 
                 case "7": # Address
@@ -222,7 +233,7 @@ try:
 
                 case "8": # Training
 
-                    show_train()
+                    show_train(emp_num)
                     
                     print("[1] Concessions Training\n[2] Tickets Training\n[3] Manager Training")
                     usr = input("Which training would you like to edit?: ")
@@ -300,7 +311,7 @@ try:
                         case _:
                             print("That is not  a valid option, Please try again.")
 
-                    show_train()
+                    show_train(emp_num)
 
                 case _:
                     print("Option is not allowed. Please try again.")
@@ -334,6 +345,7 @@ try:
                 WHERE item = ?
                 """,(usr,))
                 con.commit()
+                show_con()
 
             case "3":
                 show_con()
@@ -417,7 +429,6 @@ try:
                 table.add_row(i)
             print(table)
 
-# TODO Filter by employee
     def show_pay(emp_num):
         cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID) WHERE emp_ID = ?",(emp_num,))
         rows = cursor.fetchall()
@@ -426,10 +437,9 @@ try:
             table.add_row(i)
         print(table)
 
- # TODO Filter by employee
-    def show_train():
+    def show_train(emp_num):
 # TODO Make boolean readable
-        cursor.execute("SELECT * FROM training")
+        cursor.execute("SELECT * FROM training WHERE emp_ID = ?",(emp_num))
         rows = cursor.fetchall()
         table = PrettyTable(["Employee ID", "Concessions Training", "Ticket Training", "Manager Training"])
         for i in rows:
@@ -466,7 +476,7 @@ try:
                 print(table)
 
             case "4":
-                cursor.execute("SELECT now_showing, title, time_slot_ID, loc_ID, screen_ID, start_date, start_month, end_date, end_month FROM movies",)
+                cursor.execute("SELECT now_showing, title, time_slot_ID, loc_ID, screen_ID, start_date, start_month, end_date, end_month FROM movies LIMIT 25",)
                 if cursor.rowcount == 0:
                     print("There are no movies :(")
                 else:
@@ -489,9 +499,12 @@ try:
                 print("That is not a valid option Please Try Again")
                 show()
 
-
-
-    start()
+    loop = "F"
+    while loop == "F":
+        start()
+        usr = input("Would you like to quit?(y/n): ")
+        if usr == "y":
+            loop = "T"
 
     cursor.close()
            	

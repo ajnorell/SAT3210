@@ -1,17 +1,19 @@
-array = [[0,2,3],[4,5,6],[7,8,9],[10,11,1]]
-key = 1
-global var
-var = "F"
-for i in array:
-    if var == "F":
-        for j, entry in enumerate(i):
-            if key == entry:
-                var = "T"
-                print(key)
-                break
+
+usr = "100.0"
+if usr.__contains__("."):
+        if len(usr.rsplit(".")[-1]) == 1:  
+            if len(usr) <= 4:
+                print("yes")
             else:
-                var = "F"
-    else:
-        break
-        
-print(var)
+                print("no")
+        elif len(usr.rsplit(".")[-1]) == 2:
+            if len(usr) <=5:
+                print("yes")
+            else:
+                print("no")
+        else:
+           print("no")    
+elif len(usr) <= 2:
+    print("yes")
+else:
+    print("no")
