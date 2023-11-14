@@ -104,7 +104,7 @@ try:
 
 
                     # Validate user input
-                    if len(usr) <= 10:
+                    if len(usr) <= 13:
                         # Update the table
                         cursor.execute("""
                         UPDATE employees 
@@ -114,9 +114,10 @@ try:
                         (usr,emp_num))
                         con.commit()
                         var = "T"
+                        show_emp()
 
                     else:
-                        print("That is too many characters, Please reduce the number of characters to 50 or less.")
+                        print("That is too many characters, Please reduce the number of characters to 13 or less.")
                 
                 case "3": # Name
                     usr = input
@@ -135,9 +136,10 @@ try:
                         (usr,emp_num))
                         con.commit()
                         var = "T"
+                        show_emp()
 
                     else:
-                        print("That is too many characters, Please reduce the number of characters to 10 or less.")
+                        print("That is too many characters, Please reduce the number of characters to 50 or less.")
                 
 
                 case "4": # Salary
@@ -176,6 +178,7 @@ try:
                         (usr,emp_num))
                         con.commit()
                         var = "T"
+                        show_pay(emp_num)
 
                     else:
                         print("That is too many characters, Please reduce the number of characters to 13 or less.")
@@ -198,6 +201,7 @@ try:
                         (usr,emp_num))
                         con.commit()
                         var = "T"
+                        show_pay(emp_num)
 
                     else:
                         print("That is too many characters, Please reduce the number of characters to 13 or less.")
@@ -220,6 +224,7 @@ try:
                         (usr,emp_num))
                         con.commit()
                         var = "T"
+                        show_pay(emp_num)
 
                     else:
                         print("That is too many characters, Please reduce the number of characters to 50 or less.")
@@ -305,6 +310,8 @@ try:
 
                         case _:
                             print("That is not  a valid option, Please try again.")
+
+                    show_train(emp_num)
 
                 case _:
                     print("Option is not allowed. Please try again.")
