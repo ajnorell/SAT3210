@@ -46,24 +46,23 @@ try:
         global emp_num
         print("[1] location\n[2] role\n[3] name\n[4] salary\n[5] account number\n[6] routing number\n[7] address\n[8] training\n\n")
         sel = input("What aspect would you like to update?: ")
+#TODO fix validation
+        show_emp()
+        emp_num = input("please enter the ID of the employee you would like to update. Dont mess it up: ")
 
-        while var == "F":
-            show_emp()
-            emp_num = input("please enter the ID of the employee you would like to update: ")
+        #cursor.execute("SELECT emp_ID FROM employees")
+        #rows = cursor.fetchall()
+        #for i in rows:
+        #    if var =="F":
+        #        for j, entry in enumerate(rows):
+        #            if entry == emp_num:
+        #                var = "T"
+        #                break
+        #    else:
+        #        break
 
-            cursor.execute("SELECT emp_ID FROM employees")
-            rows = cursor.fetchall()
-            for i in rows:
-                if var =="F":
-                    for j, entry in enumerate(rows):
-                        if emp_num == entry:
-                            var = "T"
-                            break
-                else:
-                    break
-
-            if var =="F":
-                print("That is not a valid Employee ID. Please Try again.")
+        #if var =="F":
+        #    print("That is not a valid Employee ID. Please Try again.")
 
         
 

@@ -12,18 +12,27 @@ try:
     )
 
     cursor = con.cursor()
+    global var
+    var = "F"
 
-    cursor.execute("SELECT loc_ID FROM theater")
+    emp_num = input("please enter the ID of the employee you would like to update: ")
+
+    cursor.execute("SELECT emp_ID FROM employees")
     rows = cursor.fetchall()
-    usr = 1
-
     for i in rows:
-        for j, entry in enumerate(i):
-            print(entry)
-            if i == usr:
-                print("T")
-            
-        
+        if var =="F":
+            for j, entry in enumerate(rows):
+                print(entry)
+                if entry == emp_num:
+                    var = "T"
+                    
+                    break
+        else:
+            break
+
+    if var =="F":
+        print("That is not a valid Employee ID. Please Try again.")
+
 
         
 
