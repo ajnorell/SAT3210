@@ -229,16 +229,16 @@ try:
                     usr = input("Which training would you like to edit?: ")
                     usr2 = input("Would you like to add or remove the training?: ")
                     usr2 = usr2.lower()
-                    emp_ID = tuple(emp_num)
-                    
+
+
                     match usr:
                         case "1":
                             if usr2 == "add":
                                 cursor.execute("""
                                     UPDATE training 
                                     SET con_training = 1 
-                                    WHERE emp_ID == ?
-                                """,(emp_ID))
+                                    WHERE emp_ID = ?
+                                """,(emp_num))
                                 con.commmit()
                                 var = "T"
 
@@ -246,8 +246,8 @@ try:
                                 cursor.execute("""
                                     UPDATE training 
                                     SET con_training = 0 
-                                    WHERE emp_ID == ?
-                                """,(emp_ID))
+                                    WHERE emp_ID = ?
+                                """,(emp_num))
                                 con.commmit()
                                 var = "T"
 
@@ -259,7 +259,7 @@ try:
                                 cursor.execute("""
                                     UPDATE training 
                                     SET tix_training = 1
-                                    WHERE emp_ID == ?
+                                    WHERE emp_ID = ?
                                 """,(emp_num))
                                 con.commmit()
                                 var = "T"
@@ -268,7 +268,7 @@ try:
                                 cursor.execute("""
                                     UPDATE training 
                                     SET tix_training = 0 
-                                    WHERE emp_ID == ?
+                                    WHERE emp_ID = ?
                                 """,(emp_num))
                                 con.commmit()
                                 var = "T"
@@ -281,7 +281,7 @@ try:
                                 cursor.execute("""
                                     UPDATE training 
                                     SET man_training = 1 
-                                    WHERE emp_ID == ?
+                                    WHERE emp_ID = ?
                                 """,(emp_num))
                                 con.commmit()
                                 var = "T"
@@ -290,7 +290,7 @@ try:
                                 cursor.execute("""
                                     UPDATE training 
                                     SET man_training = 0 
-                                    WHERE emp_ID == ?
+                                    WHERE emp_ID = ?
                                 """,(emp_num))
                                 con.commmit()
                                 var = "T"
