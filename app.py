@@ -143,7 +143,7 @@ try:
                 
 
                 case "4": # Salary
-                    show_pay(emp_num)
+                    show_pay()
                     usr = input("What is the new Salary of this employee?:")
                     usr = float(usr)
 
@@ -160,7 +160,7 @@ try:
                     con.commit()
 
                 case "5": # Acct Num
-                    show_pay(emp_num)
+                    show_pay()
                     usr = input("What is the new account number for this employee?:")
                     
 
@@ -176,13 +176,13 @@ try:
                         (usr,emp_num))
                         con.commit()
                         var = "T"
-                        show_pay(emp_num)
+                        show_pay()
 
                     else:
                         print("That is too many characters, Please reduce the number of characters to 13 or less.")
                 
                 case "6": # Rout Num
-                    show_pay(emp_num)
+                    show_pay()
                     usr = input("What is the new routing number for this employee?:")
                     
 
@@ -198,14 +198,14 @@ try:
                         (usr,emp_num))
                         con.commit()
                         var = "T"
-                        show_pay(emp_num)
+                        show_pay()
 
                     else:
                         print("That is too many characters, Please reduce the number of characters to 13 or less.")
                 
 
                 case "7": # Address
-                    show_pay(emp_num)
+                    show_pay()
                     usr = input("What is the new address for this employee?:")
 
 
@@ -220,7 +220,7 @@ try:
                         (usr,emp_num))
                         con.commit()
                         var = "T"
-                        show_pay(emp_num)
+                        show_pay()
 
                     else:
                         print("That is too many characters, Please reduce the number of characters to 50 or less.")
@@ -424,8 +424,8 @@ try:
             print(table)
 
 #FIXME: TODO
-    def show_pay(emp):
-        cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (?)", (emp))
+    def show_pay():
+        cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID)")
         rows = cursor.fetchall()
         table = PrettyTable(["Name", "Employee ID", "Salary", "Account Number", "Routing Number", "Address"])
         for i in rows:
@@ -446,7 +446,7 @@ try:
 
     try:
         show_train(1)
-        show_pay(1)
+        show_pay()
         show_emp()
         show_con()
         show_loc()
