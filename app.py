@@ -71,7 +71,6 @@ try:
         while var == "F":
             match sel:
                 case "1": # Location
-#TODO Input Location vs Loc_ID
                     usr = input
                     show_loc()
                     usr = str(input("What is the new location ID of this employee?:"))
@@ -140,6 +139,7 @@ try:
                         print("That is too many characters, Please reduce the number of characters to 50 or less.")
                 
                 case "4": # Salary
+                    usr =""
                     var2 = "F"
 
                     # Validate user input
@@ -397,12 +397,12 @@ try:
 
     def show_emp():
 #TODO Show location vs location ID
-        cursor.execute("SELECT * FROM employees",)
+        cursor.execute("SELECT emp_ID, name, role, location  FROM employees INNER JOIN theater USING emp_ID",)
         if cursor.rowcount == 0:
             print("There is no one employed :(")
         else:
             rows = cursor.fetchall()
-            table = PrettyTable(["ID","Location ID","Role", "Name"])
+            table = PrettyTable(["ID","Name","Role", "Location"])
             for i in rows:
                 table.add_row(i)
             print(table)
