@@ -330,10 +330,9 @@ try:
             case "2":
                 show_con()
                 usr = input("What is the name of item to remove?:")
-                usr = tuple(usr)
+
                 cursor.execute("""
-                DELETE * 
-                FROM concessions
+                DELETE FROM concessions
                 WHERE item = ?
                 """,(usr))
                 con.commit()
@@ -348,34 +347,31 @@ try:
                 match sel1:
                     case "1":
                         usr = input("Where is the type of item offered? (Basic, Full, Restaurant): ")
-                        usr = (usr, sel2)
                         cursor.execute("""
                         UPDATE concessions
                         SET type = ?
                         WHERE item = ?
-                        """,(usr))
+                        """,(usr,sel2))
                         con.commit()
                         show_con()
                     
                     case "2":
                         usr = input("What is the new name of the item?: ")
-                        usr = (usr, sel2)
                         cursor.execute("""
                         UPDATE concessions
                         SET item = ?
                         WHERE item = ?
-                        """,(usr))
+                        """,(usr,sel2))
                         con.commit()
                         show_con()
 
                     case "3":
                         usr = input("What is the new price of the item?: ")
-                        usr = (usr, sel2)
                         cursor.execute("""
                         UPDATE concessions
                         SET price = ?
                         WHERE item = ?
-                        """,(usr))
+                        """,(usr,sel2))
                         con.commit()
                         show_con()
 
