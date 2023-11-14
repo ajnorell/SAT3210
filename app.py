@@ -387,7 +387,7 @@ try:
 
 
     def show_emp():
-        cursor.execute("SELECT emp_ID, name, role, location FROM employees NATURAL JOIN theater ORDER BY name",)
+        cursor.execute("SELECT emp_ID, name, role, location FROM employees NATURAL JOIN theater",)
         if cursor.rowcount == 0:
             print("There is no one employed :(")
         else:
@@ -398,7 +398,7 @@ try:
             print(table)
     
     def show_con():
-        cursor.execute("SELECT * FROM concessions ORDER BY item",)
+        cursor.execute("SELECT * FROM concessions",)
         if cursor.rowcount == 0:
             print("There is no food :(")
         else:
@@ -445,7 +445,7 @@ try:
                 show_emp()
 
             case "2":
-                cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID) ORDER BY name")
+                cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID)")
                 rows = cursor.fetchall()
                 table = PrettyTable(["Name", "Employee ID", "Salary", "Account Number", "Routing Number", "Address"])
                 for i in rows:
@@ -453,7 +453,7 @@ try:
                 print(table)
 
             case "3":
-                cursor.execute("SELECT * FROM training ORDER BY emp_ID")
+                cursor.execute("SELECT * FROM training")
                 rows = cursor.fetchall()
                 table = PrettyTable(["Employee ID", "Concessions Training", "Ticket Training", "Manager Training"])
                 for i in rows:
@@ -461,7 +461,7 @@ try:
                 print(table)
 
             case "4":
-                cursor.execute("SELECT now_showing, title, time_slot_ID, loc_ID, screen_ID, start_date, start_month, end_date, end_month FROM movies LIMIT 10 ORDER BY time_slot_ID")
+                cursor.execute("SELECT now_showing, title, time_slot_ID, loc_ID, screen_ID, start_date, start_month, end_date, end_month FROM movies LIMIT 1")
                 if cursor.rowcount == 0:
                     print("There are no movies :(")
                 else:
