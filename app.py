@@ -387,7 +387,7 @@ try:
 
 
     def show_emp():
-        cursor.execute("SELECT emp_ID, name, role, location FROM employees NATURAL JOIN theater ORDER BY emp_ID desc",)
+        cursor.execute("SELECT emp_ID, name, role, location FROM employees NATURAL JOIN theater ORDER BY CONVERT(int, emp_ID)",)
         if cursor.rowcount == 0:
             print("There is no one employed :(")
         else:
@@ -461,7 +461,7 @@ try:
                 print(table)
 
             case "4":
-                cursor.execute("SELECT now_showing, title, time_slot_ID, loc_ID, screen_ID, start_date, start_month, end_date, end_month FROM movies LIMIT 10 ORDER BY time_slot")
+                cursor.execute("SELECT now_showing, title, time_slot_ID, loc_ID, screen_ID, start_date, start_month, end_date, end_month FROM movies LIMIT 10 ORDER BY time_slot_ID")
                 if cursor.rowcount == 0:
                     print("There are no movies :(")
                 else:
