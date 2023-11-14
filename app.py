@@ -48,28 +48,23 @@ try:
         sel = input("What aspect would you like to update?: ")
 #FIXME:TODO fix validation
         show_emp()
-        emp_num = input("please enter the ID of the employee you would like to update. Dont mess it up: ")
-        emp_ID = tuple(emp_num)
+        emp_num = input("What is the Employees' ID?: ")
 
-        #cursor.execute("SELECT emp_ID FROM employees")
-        #rows = cursor.fetchall()
-        #for i in rows:
-        #    if var =="F":
-        #        for j, entry in enumerate(rows):
-        #            if entry == emp_num:
-        #                var = "T"
-        #                break
-        #    else:
-        #        break
-
-        #if var =="F":
-        #    print("That is not a valid Employee ID. Please Try again.")
-
-        
+        cursor.execute("SELECT emp_ID FROM employees")
+        rows = cursor.fetchall()
+        for i in rows:
+            for j, entry in enumerate(i):
+                if entry == emp_num:
+                    var = "T"
+                    break  
+            if var == "T":
+                break
+        if var == "F":
+            print("Not a valid Location ID.")
+            
 
         var = "F"
 
-        
         while var == "F":
             match sel:
                 case "1": # Location
@@ -239,7 +234,7 @@ try:
                                     UPDATE training 
                                     SET con_training = 1 
                                     WHERE emp_ID = ?
-                                """,(emp_ID))
+                                """,(emp_num,))
                                 con.commit()
                                 var = "T"
 
@@ -248,7 +243,7 @@ try:
                                     UPDATE training 
                                     SET con_training = 0 
                                     WHERE emp_ID = ?
-                                """,(emp_ID))
+                                """,(emp_num,))
                                 con.commit()
                                 var = "T"
 
@@ -261,7 +256,7 @@ try:
                                     UPDATE training 
                                     SET tix_training = 1
                                     WHERE emp_ID = ?
-                                """,(emp_ID))
+                                """,(emp_num,))
                                 con.commit()
                                 var = "T"
 
@@ -270,7 +265,7 @@ try:
                                     UPDATE training 
                                     SET tix_training = 0 
                                     WHERE emp_ID = ?
-                                """,(emp_ID))
+                                """,(emp_num,))
                                 con.commit()
                                 var = "T"
 
@@ -283,7 +278,7 @@ try:
                                     UPDATE training 
                                     SET man_training = 1 
                                     WHERE emp_ID = ?
-                                """,(emp_ID))
+                                """,(emp_num,))
                                 con.commit()
                                 var = "T"
 
@@ -292,7 +287,7 @@ try:
                                     UPDATE training 
                                     SET man_training = 0 
                                     WHERE emp_ID = ?
-                                """,(emp_ID))
+                                """,(emp_num,))
                                 con.commit()
                                 var = "T"
 
