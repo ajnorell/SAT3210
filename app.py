@@ -437,10 +437,7 @@ try:
 
 
 
-    try:
-        show_train()
-    except:
-        print("A error occured")
+    start()
 
     cursor.close()
            	
