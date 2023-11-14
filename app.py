@@ -387,7 +387,7 @@ try:
 
 
     def show_emp():
-        cursor.execute("SELECT emp_ID, name, role, location FROM employees NATURAL JOIN theater ORDER BY CONVERT(int, emp_ID)",)
+        cursor.execute("SELECT emp_ID, name, role, location FROM employees NATURAL JOIN theater ORDER BY name",)
         if cursor.rowcount == 0:
             print("There is no one employed :(")
         else:
@@ -445,7 +445,7 @@ try:
                 show_emp()
 
             case "2":
-                cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID) ORDER BY emp_ID")
+                cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID) ORDER BY name")
                 rows = cursor.fetchall()
                 table = PrettyTable(["Name", "Employee ID", "Salary", "Account Number", "Routing Number", "Address"])
                 for i in rows:
