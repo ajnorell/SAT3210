@@ -452,12 +452,7 @@ try:
 
         match sel:
             case "1":
-                cursor.execute("SELECT * FROM employees")
-                rows = cursor.fetchall()
-                table = PrettyTable(["Employee ID", "Location ID", "Role", "Name"])
-                for i in rows:
-                    table.add_row(i)
-                print(table)
+                show_emp()
 
             case "2":
                 cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID)")
@@ -486,15 +481,7 @@ try:
                         table.add_row(i)
                     print(table)
             case "5":
-                cursor.execute("SELECT * FROM concessions",)
-                if cursor.rowcount == 0:
-                    print("There is no food :(")
-                else:
-                    rows = cursor.fetchall()
-                    table = PrettyTable(["Type","Item","Price"])
-                    for i in rows:
-                        table.add_row(i)
-                    print(table)
+                show_con()
             case _:
                 print("That is not a valid option Please Try Again")
                 show()
