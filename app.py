@@ -396,8 +396,7 @@ try:
 
 
     def show_emp():
-#TODO Show location vs location ID
-        cursor.execute("SELECT emp_ID, name, role, location  FROM employees INNER JOIN theater USING emp_ID",)
+        cursor.execute("SELECT emp_ID, name, role, location FROM employees NATURAL JOIN theater",)
         if cursor.rowcount == 0:
             print("There is no one employed :(")
         else:
