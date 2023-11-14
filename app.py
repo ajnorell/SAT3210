@@ -378,7 +378,7 @@ try:
                         """,(usr, sel2))
                         con.commit()
                         show_con()
-                        
+
                     case _:
                         print("Option is not allowed. Please try again.")
                         concessions()
@@ -432,6 +432,7 @@ try:
             table.add_row(i)
         print(table)
 
+#FIXME: TODO
     def show_train(emp):
 # TODO Make boolean readable
         cursor.execute("SELECT * FROM training WHERE emp_ID == ?", (emp))
@@ -443,7 +444,14 @@ try:
 
 
 
-    start()
+    try:
+        show_train(1)
+        show_pay(1)
+        show_emp()
+        show_con()
+        show_loc()
+    except:
+        print("A error occured")
 
     cursor.close()
            	
