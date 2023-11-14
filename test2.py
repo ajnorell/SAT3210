@@ -11,27 +11,15 @@ try:
         database="prod"
     )
 
+    emp = "1"
+    emp = int(emp)
     cursor = con.cursor()
-    global var
-    var = "F"
-
-    emp_num = input("please enter the ID of the employee you would like to update: ")
-
-    cursor.execute("SELECT emp_ID FROM employees")
+    cursor.execute("SELECT name, emp_ID, salary, acct_num, routing_num, address FROM payroll INNER JOIN employees USING (emp_ID) WHERE emp_ID == ?", (emp))
     rows = cursor.fetchall()
+    table = PrettyTable(["Name", "Employee ID", "Salary", "Account Number", "Routing Number", "Address"])
     for i in rows:
-        if var =="F":
-            for j, entry in enumerate(rows):
-                print(entry)
-                if entry == emp_num:
-                    var = "T"
-                    
-                    break
-        else:
-            break
-
-    if var =="F":
-        print("That is not a valid Employee ID. Please Try again.")
+        table.add_row(i)
+    print(table)
 
 
         
