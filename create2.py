@@ -47,7 +47,7 @@ try:
         CREATE TABLE employees(
         emp_ID varchar(5) PRIMARY KEY,
         loc_ID varchar(5),
-        role varchar(10),
+        role varchar(13),
         name varchar(50) NOT NULL,
         FOREIGN KEY (loc_ID) REFERENCES theater (loc_ID)
         )
