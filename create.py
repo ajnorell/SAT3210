@@ -13,10 +13,19 @@ try:
         password="P@ssw0rd",
         host="localhost",
         port=3306,
-        database="prod"
+        local_infile=1
     )
     
     cursor = con.cursor()
+
+    cursor.execute("""
+        CREATE DATABASE movies
+    """)
+    con.commit()
+
+    cursor.execute("""
+        USE movies
+    """)
 
     cursor.execute("""
         CREATE TABLE theater (

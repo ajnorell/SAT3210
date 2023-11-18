@@ -19,17 +19,17 @@ try:
     cursor = con.cursor()
 
     cursor.execute("""
-        DROP DATABASE IF EXISTS test
+        DROP DATABASE IF EXISTS movies
     """)
     con.commit()
 
     cursor.execute("""
-        CREATE DATABASE test
+        CREATE DATABASE movies
     """)
     con.commit()
 
     cursor.execute("""
-        USE test
+        USE movies
     """)
     con.commit()
 
