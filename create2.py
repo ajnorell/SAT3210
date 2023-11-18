@@ -13,6 +13,7 @@ try:
         password="P@ssw0rd",
         host="localhost",
         port=3306,
+        local_infile="ON"
     )
     
     cursor = con.cursor()
