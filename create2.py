@@ -13,10 +13,24 @@ try:
         password="P@ssw0rd",
         host="localhost",
         port=3306,
-        database="" #TODO
     )
     
     cursor = con.cursor()
+
+    cursor.execute("""
+        DROP DATABASE IF EXISTS test
+    """)
+    con.commit()
+
+    cursor.execute("""
+        CREATE DATABASE test
+    """)
+    con.commit()
+
+    cursor.execute("""
+        USE test
+    """)
+    con.commit()
 
     cursor.execute("""
         CREATE TABLE theater (
