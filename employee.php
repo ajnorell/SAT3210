@@ -21,10 +21,10 @@ $result = mysqli_query($mysqli, "SELECT emp_ID, name, role, location FROM employ
 		// Print contacts 
 		while($res = mysqli_fetch_array($result)) { 		
 			echo "<tr>";
-			echo "<td>".$res['ID']."</td>";
-			echo "<td>".$res['Name']."</td>";
-			echo "<td>".$res['Role']."</td>";	
-			echo "<td>".$res['Location']."</td>";
+			echo "<td>".$res['emp_ID']."</td>";
+			echo "<td>".$res['name']."</td>";
+			echo "<td>".$res['role']."</td>";	
+			echo "<td>".$res['location']."</td>";
 			echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this contact?')\">Delete</a></td>";		
 		}
 		?>
