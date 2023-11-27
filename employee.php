@@ -3,7 +3,7 @@
 include_once("config.php");
 
 // Fetch contacts (in descending order)
-$result = mysqli_query($mysqli, "SELECT 'emp_ID', 'name', 'role', 'location', FROM employees OUTER JOIN theater USING loc_ID"); 
+$result = mysqli_query($mysqli, "SELECT emp_ID, name, role, location FROM employees NATURAL JOIN theater"); 
 ?><html>
 <head>	
 	<title>Employee</title>

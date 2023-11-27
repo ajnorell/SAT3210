@@ -11,7 +11,7 @@ include_once("config.php");
 	<table>
 		<tr>
 			<td><a class="button" href="employee.php">Employee</a></td>
-			<td><a class="button" href="concessions.php
+			<td><a class="button" href="concessions.php">Concessoins</a></td>
 		</tr>
 	</table>
 </body>
