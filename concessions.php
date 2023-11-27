@@ -3,7 +3,7 @@
 include_once("config.php");
 
 // Fetch contacts (in descending order)
-$result = mysqli_query($mysqli, "SELECT * FROM concessions ORDER BY type"); 
+$result = mysqli_query($mysqli, "SELECT * FROM concessions GROUP BY type"); 
 ?><html>
 <head>	
 	<title>Concessions</title>
@@ -23,7 +23,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM concessions ORDER BY type");
 			echo "<td>".$res['type']."</td>";
 			echo "<td>".$res['item']."</td>";
 			echo "<td>".$res['price']."</td>";	
-			echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this contact?')\">Delete</a></td>";		
+			echo "<td><a href=\"edit_con.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this contact?')\">Delete</a></td>";		
 		}
 		?>
 	</table>

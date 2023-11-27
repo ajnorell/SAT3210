@@ -3,7 +3,7 @@
 include_once("config.php");
 
 // Fetch contacts (in descending order)
-$result = mysqli_query($mysqli, "SELECT emp_ID, name, role, location FROM employees NATURAL JOIN theater ORDER BY emp_ID"); 
+$result = mysqli_query($mysqli, "SELECT emp_ID, name, role, loc_ID, location FROM employees NATURAL JOIN theater ORDER BY emp_ID"); 
 ?><html>
 <head>	
 	<title>Employee</title>
@@ -15,6 +15,7 @@ $result = mysqli_query($mysqli, "SELECT emp_ID, name, role, location FROM employ
 			<td>ID</td>
 			<td>Name</td>
 			<td>Role</td>
+			<td>Location ID</td>
             <td>Location</td>
 		</tr>
 		<?php
@@ -24,8 +25,9 @@ $result = mysqli_query($mysqli, "SELECT emp_ID, name, role, location FROM employ
 			echo "<td>".$res['emp_ID']."</td>";
 			echo "<td>".$res['name']."</td>";
 			echo "<td>".$res['role']."</td>";	
-			echo "<td>".$res['location']."</td>";
-			echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this contact?')\">Delete</a></td>";		
+			echo "<td>".$res['loc_ID']."</td>";
+			echo "<td>".$res["location"]."</td>";
+			echo "<td><a href=\"edit_emp.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this contact?')\">Delete</a></td>";		
 		}
 		?>
 	</table>
