@@ -20,7 +20,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM concessions");
 		// Print contacts 
 		while($res = mysqli_fetch_array($result)) { 		
 			echo "<tr>";
-			echo "<td>".$res['type']."</td>";
+			echo "<td>".$res['con_type']."</td>";
 			echo "<td>".$res['item']."</td>";
 			echo "<td>".$res['price']."</td>";	
 			echo "<td><a href=\"edit_con.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this contact?')\">Delete</a></td>";		
