@@ -4,6 +4,8 @@
 #ajnorell, ajurewic, ikgatti
 #Mariadb
 
+### BROKEN
+
 import mariadb
 import sys
 

@@ -25,7 +25,7 @@ if(isset($_POST['update']))
 		}		
 	} else {	
 		// Execute UPDATE 
-		$stmt = $mysqli->prepare("UPDATE employees SET name=?, role=?, loc_ID=? WHERE emp_id=?");
+		$stmt = $mysqli->prepare("UPDATE employees SET 'name'=?, 'role'=?, 'loc_ID'=? WHERE 'emp_id'=?");
 		$stmt->bind_param("ssss", $name, $role, $loc_ID, $emp_ID);
 		$stmt->execute();
 
