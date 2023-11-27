@@ -7,7 +7,7 @@ $id = $_GET['id'];
 
 // Delete row for a specified id
 $stmt = $mysqli->prepare("DELETE FROM contacts WHERE id=?");
-$stmt->bind_param("i", $id);
+$stmt->bind_param("s", $id);
 $stmt->execute();
 
 // Redirect to home page (index.php)

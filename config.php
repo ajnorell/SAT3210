@@ -1,9 +1,9 @@
 <?php
 // Basic connection settings
-$databaseHost = '<host_address>';
-$databaseUsername = '<user_name>';
-$databasePassword = '******';
-$databaseName = 'rolodex';
+$databaseHost = '127.0.1.1';
+$databaseUsername = 'root';
+$databasePassword = 'P@ssw0rd';
+$databaseName = 'movies';
 
 // Connect to the database
 $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
