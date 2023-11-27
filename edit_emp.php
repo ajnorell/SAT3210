@@ -65,7 +65,7 @@ else {
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-	<form name="form1" method="post" action="edit_emp.php?id=<?php echo $id ?>">
+	<form name="form1" method="post" action="edit_emp.php?id=<?php echo $emp_ID ?>">
 		<table>
 			<tr> 
 				<td>Name</td>
