@@ -43,7 +43,7 @@ else if (isset($_POST['cancel'])) {
 $emp_ID = $_GET['emp_ID'];
 
 // Get contact by id
-$result = mysqli_query($mysqli, "SELECT emp_ID, name, role, loc_ID FROM employees ORDER BY emp_ID"); 
+$result = mysqli_query($mysqli, "SELECT 'emp_ID', 'name', 'role', 'loc_ID' FROM employees ORDER BY emp_ID"); 
 
 if (!$result) {
     printf("Error: %s\n", mysqli_error($mysqli));

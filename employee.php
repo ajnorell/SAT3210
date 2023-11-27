@@ -19,7 +19,7 @@ $result = mysqli_query($mysqli, "SELECT emp_ID, name, role, loc_ID, location FRO
             <td>Location</td>
 		</tr>
 		<?php
-		// Print contacts 
+		// Print employees
 		while($res = mysqli_fetch_array($result)) { 		
 			echo "<tr>";
 			echo "<td>".$res['emp_ID']."</td>";
@@ -27,7 +27,7 @@ $result = mysqli_query($mysqli, "SELECT emp_ID, name, role, loc_ID, location FRO
 			echo "<td>".$res['role']."</td>";	
 			echo "<td>".$res['loc_ID']."</td>";
 			echo "<td>".$res["location"]."</td>";
-			echo "<td><a href=\"edit_emp.php?id=$res[emp_ID]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this contact?')\">Delete</a></td>";		
+			echo "<td><a href=\"edit_emp.php?id=$res[emp_ID]\">Edit</a> | <a href=\"delete.php?id=$res[emp_ID]\" onClick=\"return confirm('Are you sure you want to delete this contact?')\">Delete</a></td>";		
 		}
 		?>
 	</table>
