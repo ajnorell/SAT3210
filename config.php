@@ -1,6 +1,6 @@
 <?php
 // Basic connection settings
-$databaseHost = '127.0.1.1';
+$databaseHost = '127.0.0.1';
 $databaseUsername = 'root';
 $databasePassword = 'P@ssw0rd';
 $databaseName = 'movies';
