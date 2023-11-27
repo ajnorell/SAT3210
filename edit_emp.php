@@ -61,7 +61,7 @@ else {
 ?>
 <html>
 <head>	
-	<title>Edit Emplpyee</title>
+	<title>Edit Employees</title>
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
