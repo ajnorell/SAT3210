@@ -10,7 +10,7 @@ if(isset($_POST['update']))
 	$role = mysqli_real_escape_string($mysqli, $_POST['role']);
 	$loc_ID = mysqli_real_escape_string($mysqli, $_POST['loc_ID']);	
 
-	$nameErr = $roleErr = $loc_IDErr ="";
+	$nameErr = $roleErr = $loc_IDErr = $emp_ID = null;
 	
 	// Check for empty fields
 	if(empty($name) || empty($role) || empty($loc_ID)) {	
