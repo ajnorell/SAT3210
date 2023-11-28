@@ -23,7 +23,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM concessions GROUP BY con_type");
 			echo "<td>".$res['con_type']."</td>";
 			echo "<td>".$res['item']."</td>";
 			echo "<td>".$res['price']."</td>";	
-			echo "<td><a href=\"edit_con.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this contact?')\">Delete</a></td>";		
+			echo "<td><a href=\"edit_con.php?name=$res[name]\">Edit</a> | <a href=\"delete.php?name=$res[name]\" onClick=\"return confirm('Are you sure you want to delete this contact?')\">Delete</a></td>";		
 		}
 		?>
 	</table>
