@@ -2,6 +2,8 @@
 // Include database connection file
 include_once("config.php");
 
+$con_type = $priceErr = $nameErr = "";
+
 if(isset($_POST['update']))
 {	
 	// Retrieve record values
@@ -37,9 +39,10 @@ else if (isset($_POST['cancel'])) {
 <?php
 // Retrieve id value from querystring parameter
 $name = $_GET['name'];
+$name = mysqli_escape_string($mysqli, $name);
 
 // Get contact by id
-$result = mysqli_query($mysqli, "SELECT * FROM concessions WHERE name=$name");
+$result = mysqli_query($mysqli, "SELECT con_type, price FROM concessions WHERE name=$name");
 
 if (!$result) {
     printf("Error: %s\n", mysqli_error($mysqli));
