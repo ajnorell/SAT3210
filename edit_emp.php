@@ -2,6 +2,8 @@
 // Include database connection file
 include_once("config.php");
 
+$nameErr = $roleErr = $loc_IDErr ="";
+
 if(isset($_POST['update']))
 {	
 	// Retrieve record values
@@ -10,7 +12,7 @@ if(isset($_POST['update']))
 	$role = mysqli_real_escape_string($mysqli, $_POST['role']);
 	$loc_ID = mysqli_real_escape_string($mysqli, $_POST['loc_ID']);	
 
-	$nameErr = $roleErr = $loc_IDErr = $emp_ID = null;
+	$nameErr = $roleErr = $loc_IDErr = "";
 	
 	// Check for empty fields
 	if(empty($name) || empty($role) || empty($loc_ID)) {	
@@ -41,7 +43,7 @@ else if (isset($_POST['cancel'])) {
 <?php
 // Retrieve id value from querystring parameter
 $emp_ID = $_GET['emp_ID'];
-
+$emp_ID = mysqli_real_escape_string($mysqli, $emp_ID);
 // Get contact by id
 $result = mysqli_query($mysqli, "SELECT name, role, loc_ID FROM employees WHERE emp_ID=$emp_ID"); 
 
