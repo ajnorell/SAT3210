@@ -5,28 +5,24 @@ include_once("config.php");
 if(isset($_POST['update']))
 {	
 	// Retrieve record values
-	$id = mysqli_real_escape_string($mysqli, $_POST['id']);
+	$con_type = mysqli_real_escape_string($mysqli, $_POST['con_type']);
 	$name = mysqli_real_escape_string($mysqli, $_POST['name']);
-	$age = mysqli_real_escape_string($mysqli, $_POST['age']);
-	$email = mysqli_real_escape_string($mysqli, $_POST['email']);	
+	$price = mysqli_real_escape_string($mysqli, $_POST['price']);
 
-	$nameErr = $ageErr = $emailErr = "";
+	$con_typeErr = $priceErr = "";
 	
 	// Check for empty fields
-	if(empty($name) || empty($age) || empty($email)) {	
-		if(empty($name)) {
-			$nameErr = "* required";
+	if(empty($con_type) || empty($price)) {	
+		if(empty($con_type)) {
+			$con_typeErr = "* required";
 		}
-		if(empty($age)) {
-			$ageErr = "* required";
-		}
-		if(empty($email)) {
-			$emailErr = "* required";
+		if(empty($price)) {
+			$priceErr = "* required";
 		}		
 	} else {	
 		// Execute UPDATE 
-		$stmt = $mysqli->prepare("UPDATE contacts SET name=?, age=?, email=? WHERE id=?");
-		$stmt->bind_param("sisi", $name, $age, $email, $id);
+		$stmt = $mysqli->prepare("UPDATE concessions SET con_type=?, price=?,  WHERE name=?");
+		$stmt->bind_param("ssds", $con_type, $price, $name);
 		$stmt->execute();
 
 		// Redirect to home page (index.php)
@@ -40,10 +36,10 @@ else if (isset($_POST['cancel'])) {
 ?>
 <?php
 // Retrieve id value from querystring parameter
-$id = $_GET['id'];
+$name = $_GET['name'];
 
 // Get contact by id
-$result = mysqli_query($mysqli, "SELECT * FROM contacts WHERE id=$id");
+$result = mysqli_query($mysqli, "SELECT * FROM concessions WHERE name=$name");
 
 if (!$result) {
     printf("Error: %s\n", mysqli_error($mysqli));
@@ -53,8 +49,8 @@ else {
 	while($res = mysqli_fetch_array($result))
 	{
 		$name = $res['name'];
-		$age = $res['age'];
-		$email = $res['email'];
+		$price = $res['price'];
+		$con_type = $res['con_type'];
 	}
 }
 ?>
@@ -64,27 +60,20 @@ else {
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-	<form name="form1" method="post" action="edit.php?id=<?php echo $id ?>">
+	<form name="form1" method="post" action="edit_con.php?id=<?php echo $name ?>">
 		<table>
 			<tr> 
-				<td>Name</td>
+				<td>Price</td>
 				<td>
-					<input type="text" name="name" value="<?php echo $name;?>">
-					<span class="error"><?php echo $nameErr;?></span>
+					<input type="text" name="price" value="<?php echo $price;?>">
+					<span class="error"><?php echo $priceErr;?></span>
 				</td>
 			</tr>
 			<tr> 
-				<td>Age</td>
+				<td>Type</td>
 				<td>
-					<input type="text" name="age" value="<?php echo $age;?>">
-					<span class="error"><?php echo $ageErr;?></span>
-				</td>
-			</tr>
-			<tr> 
-				<td>Email</td>
-				<td>
-					<input type="text" name="email" value="<?php echo $email;?>">
-					<span class="error"><?php echo $emailErr;?></span>
+					<input type="text" name="email" value="<?php echo $con_type;?>">
+					<span class="error"><?php echo $con_typeErr;?></span>
 				</td>
 			</tr>
 			<tr>
@@ -93,7 +82,7 @@ else {
 				</td>
 				<td>
 					<input type="submit" name="update" value="Update">
-					<input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
+					<input type="hidden" name="id" value=<?php echo $_GET['name'];?>>
 				</td>
 			</tr>
 		</table>

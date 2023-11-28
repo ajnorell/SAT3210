@@ -31,5 +31,7 @@ $result = mysqli_query($mysqli, "SELECT emp_ID, name, role, loc_ID, location FRO
 		}
 		?>
 	</table>
+
+	
 </body>
 </html>
