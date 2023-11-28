@@ -60,7 +60,7 @@ else {
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-	<form name="form1" method="post" action="edit_con.php?id=<?php echo $name ?>">
+	<form name="form1" method="post" action="edit_con.php?name=<?php echo $name ?>">
 		<table>
 			<tr> 
 				<td>Price</td>
@@ -82,7 +82,7 @@ else {
 				</td>
 				<td>
 					<input type="submit" name="update" value="Update">
-					<input type="hidden" name="id" value=<?php echo $_GET['name'];?>>
+					<input type="hidden" name="name" value=<?php echo $_GET['name'];?>>
 				</td>
 			</tr>
 		</table>
