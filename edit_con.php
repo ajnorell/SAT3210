@@ -2,13 +2,13 @@
 // Include database connection file
 include_once("config.php");
 
-$con_type = $priceErr = $nameErr = "";
+$con_type = $priceErr = $itemErr = "";
 
 if(isset($_POST['update']))
 {	
 	// Retrieve record values
 	$con_type = mysqli_real_escape_string($mysqli, $_POST['con_type']);
-	$name = mysqli_real_escape_string($mysqli, $_POST['name']);
+	$item = mysqli_real_escape_string($mysqli, $_POST['item']);
 	$price = mysqli_real_escape_string($mysqli, $_POST['price']);
 
 	$con_typeErr = $priceErr = "";
@@ -23,8 +23,8 @@ if(isset($_POST['update']))
 		}		
 	} else {	
 		// Execute UPDATE 
-		$stmt = $mysqli->prepare("UPDATE concessions SET con_type=?, price=?,  WHERE name=?");
-		$stmt->bind_param("ssds", $con_type, $price, $name);
+		$stmt = $mysqli->prepare("UPDATE concessions SET con_type=?, price=?,  WHERE item=?");
+		$stmt->bind_param("ssds", $con_type, $price, $item);
 		$stmt->execute();
 
 		// Redirect to home page (index.php)
@@ -38,11 +38,11 @@ else if (isset($_POST['cancel'])) {
 ?>
 <?php
 // Retrieve id value from querystring parameter
-$name = $_GET['name'];
-$name = mysqli_escape_string($mysqli, $name);
+$item = $_GET['item'];
+$item = mysqli_escape_string($mysqli, $item);
 
 // Get contact by id
-$result = mysqli_query($mysqli, "SELECT con_type, price FROM concessions WHERE name=$name");
+$result = mysqli_query($mysqli, "SELECT con_type, price FROM concessions WHERE item = $item");
 
 if (!$result) {
     printf("Error: %s\n", mysqli_error($mysqli));
@@ -51,7 +51,7 @@ if (!$result) {
 else {
 	while($res = mysqli_fetch_array($result))
 	{
-		$name = $res['name'];
+		$item = $res['item'];
 		$price = $res['price'];
 		$con_type = $res['con_type'];
 	}
@@ -63,29 +63,29 @@ else {
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-	<form name="form1" method="post" action="edit_con.php?name=<?php echo $name ?>">
+	<form item="form1" method="post" action="edit_con.php?item=<?php echo $item ?>">
 		<table>
 			<tr> 
 				<td>Price</td>
 				<td>
-					<input type="text" name="price" value="<?php echo $price;?>">
+					<input type="text" item="price" value="<?php echo $price;?>">
 					<span class="error"><?php echo $priceErr;?></span>
 				</td>
 			</tr>
 			<tr> 
 				<td>Type</td>
 				<td>
-					<input type="text" name="email" value="<?php echo $con_type;?>">
+					<input type="text" item="email" value="<?php echo $con_type;?>">
 					<span class="error"><?php echo $con_typeErr;?></span>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input class="cancel" type="submit" name="cancel" value="Cancel">
+					<input class="cancel" type="submit" item="cancel" value="Cancel">
 				</td>
 				<td>
-					<input type="submit" name="update" value="Update">
-					<input type="hidden" name="name" value=<?php echo $_GET['name'];?>>
+					<input type="submit" item="update" value="Update">
+					<input type="hidden" item="item" value=<?php echo $_GET['item'];?>>
 				</td>
 			</tr>
 		</table>
