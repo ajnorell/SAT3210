@@ -23,7 +23,7 @@ if(isset($_POST['update']))
 		}		
 	} else {	
 		// Execute UPDATE 
-		$stmt = $mysqli->prepare("UPDATE concessions SET con_type=?, price=?,  WHERE item=?");
+		$stmt = $mysqli->prepare("UPDATE concessions SET con_type=?, price=?,  WHERE item="?"");
 		$stmt->bind_param("sis", $con_type, $price, $item);
 		$stmt->execute();
 
