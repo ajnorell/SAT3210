@@ -42,8 +42,9 @@ $item = $_GET['item'];
 $item = mysqli_escape_string($mysqli, $item);
 
 // Get contact by id
-$result = mysqli_query($mysqli, "SELECT con_type, price FROM concessions WHERE item = $item");
-
+$result = $mysqli->prepare("SELECT con_type, price FROM concessions WHERE item=?");
+$result->bind_param("s", $item);
+$result->execute();
 if (!$result) {
     printf("Error: %s\n", mysqli_error($mysqli));
     exit();
