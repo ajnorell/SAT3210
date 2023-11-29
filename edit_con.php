@@ -10,6 +10,7 @@ if(isset($_POST['update']))
 	$con_type = mysqli_real_escape_string($mysqli, $_POST['con_type']);
 	$item = mysqli_real_escape_string($mysqli, $_POST['item']);
 	$price = mysqli_real_escape_string($mysqli, $_POST['price']);
+	$price = (float)$price;
 
 	$con_typeErr = $priceErr = "";
 	
@@ -23,7 +24,6 @@ if(isset($_POST['update']))
 		}		
 	} else {	
 		// Execute UPDATE 
-		$price = (float)$price;
 		$stmt = $mysqli->prepare("UPDATE concessions SET con_type=?, price=? WHERE item=?");
 		$stmt->bind_param("sds", $con_type, $price, $item);
 		$stmt->execute();
