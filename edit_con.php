@@ -42,7 +42,7 @@ $item = $_GET['item'];
 $item = mysqli_escape_string($mysqli, $item);
 
 // Get contact by id
-$result = mysqli_query($mysqli, "SELECT * FROM concessions WHERE item = $item");
+$result = mysqli_query($mysqli, "SELECT * FROM concessions WHERE item =  " + "'" + "$item" + "'");
 if (!$result) {
     printf("Error: %s\n", mysqli_error($mysqli));
     exit();
