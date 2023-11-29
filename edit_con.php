@@ -23,8 +23,8 @@ if(isset($_POST['update']))
 		}		
 	} else {	
 		// Execute UPDATE 
-		$stmt = $mysqli->prepare("UPDATE concessions SET con_type=?, price=?,  WHERE item=$item");
-		$stmt->bind_param("si", $con_type, $price);
+		$stmt = $mysqli->prepare("UPDATE concessions SET con_type=?, price=?,  WHERE item=?");
+		$stmt->bind_param("sds", $con_type, $price,$item);
 		$stmt->execute();
 
 		// Redirect to home page (index.php)
@@ -42,9 +42,7 @@ $item = $_GET['item'];
 $item = mysqli_escape_string($mysqli, $item);
 
 // Get contact by id
-$result = $mysqli->prepare("SELECT con_type, price FROM concessions WHERE item=?");
-$result->bind_param("s", $item);
-$result->execute();
+$result = mysqli_query($mysqli, "SELECT * FROM concessions WHERE item = $item");
 if (!$result) {
     printf("Error: %s\n", mysqli_error($mysqli));
     exit();
