@@ -76,7 +76,7 @@ else {
 			<tr> 
 				<td>Type</td>
 				<td>
-					<input type="text" item="email" value="<?php echo $con_type;?>">
+					<input type="text" item="con_type" value="<?php echo $con_type;?>">
 					<span class="error"><?php echo $con_typeErr;?></span>
 				</td>
 			</tr>
