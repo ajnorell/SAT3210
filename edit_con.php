@@ -29,6 +29,7 @@ if(isset($_POST['update']))
 		$stmt = $mysqli->prepare("UPDATE concessions SET con_type=?, price=? WHERE item=?");
 		$stmt->bind_param("sds", $con_type, $price, $item);
 		$stmt->execute();
+		echo $stmt;
 
 		// Redirect to home page (index.php)
 		header("Location: index.php");
