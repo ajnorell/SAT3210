@@ -11,6 +11,8 @@ if(isset($_POST['update']))
 	$item = mysqli_real_escape_string($mysqli, $_POST['item']);
 	$price = mysqli_real_escape_string($mysqli, $_POST['price']);
 	$price = (float)$price;
+	$item = "\"" . $item . "\"";
+	$con_type = "\"" . $con_type . "\"";
 
 	$con_typeErr = $priceErr = "";
 	
