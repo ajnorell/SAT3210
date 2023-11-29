@@ -3,7 +3,7 @@
 include_once("config.php");
 
 // Fetch contacts (in descending order)
-$result = mysqli_query($mysqli, "SELECT * FROM concessions GROUP BY con_type"); 
+$result = mysqli_query($mysqli, "SELECT * FROM concessions ORDER BY con_type"); 
 ?><html>
 <head>	
 	<title>Concessions</title>
