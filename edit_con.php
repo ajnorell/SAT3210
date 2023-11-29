@@ -40,7 +40,7 @@ else if (isset($_POST['cancel'])) {
 // Retrieve id value from querystring parameter
 $item = $_GET['item'];
 $item = mysqli_escape_string($mysqli, $item);
-$item = "\"" + $item + "\"";
+$item = (string)$item;
 
 // Get contact by id
 $result = mysqli_query($mysqli, "SELECT * FROM concessions WHERE item = $item");
