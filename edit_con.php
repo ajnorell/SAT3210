@@ -2,7 +2,7 @@
 // Include database connection file
 include_once("config.php");
 
-$con_type = $priceErr = $itemErr = "";
+$con_typeErr = $priceErr = "";
 
 if(isset($_POST['update']))
 {	
