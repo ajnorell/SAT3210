@@ -114,7 +114,8 @@ input[type=submit].cancel:hover {
 }
 
 .buttoncenter {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
     border: 1px solid #000;
     border-radius: 10px;
