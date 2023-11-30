@@ -490,7 +490,7 @@ try:
         sel2 = tuple(sel)
         if conf == "y":
             cursor.execute("DELETE FROM employees WHERE emp_ID=?",(sel2))
-            cursor.commit()
+            con.commit()
             print("Employee #" + sel + " deleted.")
         else:
             print("An Error occured")
@@ -543,7 +543,7 @@ try:
             INSERT INTO employees
             VALUES emp_ID=?, loc_ID=?, role=?, name=?
         """,(sel,sel2,sel3,sel4))
-        cursor.commit()
+        con.commit()
 
 
 
