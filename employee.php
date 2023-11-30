@@ -1,10 +1,10 @@
-SAT 3210
-Course Project Extra Credit
-Handle Employee Functions
-ajnorell, ajurewic, ikgatti
-@mysqli @php
-
 <?php
+//SAT 3210
+//Course Project Extra Credit
+//Handle Employee Functions
+//ajnorell, ajurewic, ikgatti
+//@mysqli @php
+
 // Include the database connection file
 include_once("config.php");
 
@@ -23,6 +23,7 @@ $result = mysqli_query($mysqli, "SELECT emp_ID, name, role, loc_ID, location FRO
 			<td>Role</td>
 			<td>Location ID</td>
             <td>Location</td>
+			<td><a class="button" href="add_emp.php">Add Employee</a></td>
 		</tr>
 		<?php
 		// Print employees

@@ -1,10 +1,9 @@
-SAT 3210
-Course Project Extra Credit
-Handle Concessions
-ajnorell, ajurewic, ikgatti
-@mysqli @php
-
 <?php
+//SAT 3210
+//Course Project Extra Credit
+//Handle Concessions
+//ajnorell, ajurewic, ikgatti
+//@mysqli @php
 // Include the database connection file
 include_once("config.php");
 
@@ -21,6 +20,7 @@ $result = mysqli_query($mysqli, "SELECT * FROM concessions ORDER BY con_type");
 			<td>Type</td>
 			<td>Item</td>
 			<td>Price</td>
+			<td><a class="button" href="add_con.php">Add Concesisons</a></td>
 		</tr>
 		<?php
 		// Print contacts 

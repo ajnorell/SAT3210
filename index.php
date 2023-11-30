@@ -1,10 +1,9 @@
-SAT 3210
-Course Project Extra Credit
-Index page of website
-ajnorell, ajurewic, ikgatti
-@mysqli @php
-
 <?php
+//SAT 3210
+//Course Project Extra Credit
+//Index page of website
+//ajnorell, ajurewic, ikgatti
+//@mysqli @php
 // Include the database connection file
 include_once("config.php");
 ?>

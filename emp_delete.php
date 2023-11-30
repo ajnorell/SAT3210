@@ -1,10 +1,9 @@
-SAT 3210
-Course Project Extra Credit
-Delete Employees
-ajnorell, ajurewic, ikgatti
-@mysqli @php
-
 <?php
+//SAT 3210
+//Course Project Extra Credit
+//Delete Employees
+//ajnorell, ajurewic, ikgatti
+//@mysqli @php
 // Include database connection file
 include("config.php");
 
