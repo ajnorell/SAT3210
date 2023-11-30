@@ -540,8 +540,8 @@ try:
                 print("That is too many characters, Please reduce the number of characters to 50 or less.")
 
         cursor.execute("""
-            INSERT INTO employees
-            VALUES emp_ID=?, loc_ID=?, role=?, name=?
+            INSERT INTO employees (emp_ID, loc_ID, role, name)
+            VALUES (?,?,?,?)
         """,(sel,sel2,sel3,sel4))
         con.commit()
 
