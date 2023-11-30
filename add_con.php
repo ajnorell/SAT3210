@@ -16,7 +16,7 @@ if(isset($_POST['update']))
 	$item = mysqli_real_escape_string($mysqli, $_POST['item']);
 	$price = mysqli_real_escape_string($mysqli, $_POST['price']);
 
-	$con_typeErr = $priceErr = "";
+	$con_typeErr = $priceErr = $itemErr = "";
 	
 	// Check for empty fields
 	if(empty($con_type) || empty($price) || empty($item)) {	
@@ -78,7 +78,7 @@ else if (isset($_POST['cancel'])) {
 					<input class="cancel" type="submit" item="cancel" value="Cancel">
 				</td>
 				<td>
-					<input type="submit" name="update" value="update">
+					<input type="submit" name="Add" value="update">
 				</td>
 			</tr>
 		</table>
