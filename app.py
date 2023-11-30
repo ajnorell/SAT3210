@@ -5,6 +5,7 @@
 # @mariadb @python3
 
 
+from re import T
 import mariadb
 import sys
 from prettytable import PrettyTable
@@ -25,7 +26,7 @@ try:
     cursor = con.cursor()
        
     def start():
-        print("[1] Edit Employees\n[2] Edit Concessions\n[3] Show Tables")
+        print("[1] Edit Employees\n[2] Delete Employees\n[3] Add Employees\n[4] Concessions\n[5] Show Tables")
         sel = input("Which one would you like to update?: ")
 
         match sel:
@@ -33,9 +34,15 @@ try:
                 employees()
 
             case "2":
-                concessions()
+                del_emp()
 
             case "3":
+                add_emp()
+
+            case "4":
+                concessions()
+
+            case "5":
                 show()
 
             case _:
@@ -69,7 +76,6 @@ try:
         while var == "F":
             match sel:
                 case "1": # Location
-                    usr = input
                     show_loc()
                     usr = str(input("What is the new location ID of this employee?:"))
 
@@ -476,6 +482,69 @@ try:
             case _:
                 print("That is not a valid option Please Try Again")
                 show()
+
+    def del_emp():
+        show_emp()
+        sel = input("What is the id of employee you want to delete?: ")
+        conf = input("Are you sure you want to delete employee #" + sel + "?(y/n): ")
+        if conf == "y":
+            cursor.execute("DELETE FROM employees WHERE emp_ID=?",(sel))
+            cursor.commit()
+            print("Employee #" + sel + " deleted.")
+        else:
+            print("An Error occured")
+
+    def add_emp():
+        global var, sel, sel2, sel3, sel4
+
+        var = "F"
+        while var == "F":
+            sel = str(input("What is the ID # of the employee?: "))
+            if len(sel) <= 5:
+                var = T
+            if var == "F":
+                print("Employee ID must be less than 5 digits long")
+        
+        var = "F"
+        while var == "F":
+            sel2 = str(input("What is the location ID of this employee?:"))
+
+            # Validate user input
+            cursor.execute("SELECT loc_ID FROM theater")
+            rows = cursor.fetchall()
+            for i in rows:
+                for j, entry in enumerate(i):
+                    if entry == sel2:
+                        var = "T"  
+            if var == "F":
+                print("Not a valid Location ID.")
+
+        var = "F"
+        while var == "F":
+            sel3 = input("What is the Role of this employee?:")
+
+            # Validate user input
+            if len(sel3) <= 13:
+                var = "T"
+            if var == "F":
+                print("That is too many characters, Please reduce the number of characters to 13 or less.")
+
+        var = "F"
+        while var == "F":
+            sel4 = input("What is the Name of this employee?:")
+            # Validate user input
+            if len(sel4) <= 50:
+                var = "T"
+            if var =="F":
+                print("That is too many characters, Please reduce the number of characters to 50 or less.")
+
+        cursor.execute("""
+            INSERT INTO employees
+            VALUES emp_ID=?, loc_ID=?, role=?, name=?
+        """,(sel,sel2,sel3,sel4))
+        cursor.commit()
+
+
 
     loop = "F"
     while loop == "F":
