@@ -8,6 +8,7 @@
 // Include database connection file
 include_once("config.php");
 
+$con_type = $price = $item = "";
 $con_typeErr = $priceErr = $itemErr = "";
 
 if(isset($_POST['update']))

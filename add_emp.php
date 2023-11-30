@@ -8,6 +8,8 @@
 // Include database connection file
 include_once("config.php");
 
+
+
 $nameErr = $roleErr = $loc_IDErr = $emp_IDErr = "";
 
 if(isset($_POST['update']))
@@ -28,7 +30,7 @@ if(isset($_POST['update']))
 		if(empty($role)) {
 			$roleErr = "* required";
 		}
-		if(empty($loc_ID)) {
+		if(empty($loc_ID)) {$name = $role = $loc_ID = $emp_ID = "";
 			$loc_IDErr = "* required";
 		}
 		if(empty($emp_ID)) {
