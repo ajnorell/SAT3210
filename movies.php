@@ -10,12 +10,12 @@ include_once("config.php");
 ?>
 <html>
 <head>	
-	<title>Edit Employees</title>
+	<title>Select Movies</title>
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <a>
-    <div style="margin-left:50%">
+    <div style="margin: 0 auto">
     <label for="location">Choose a location:</label>
     <select name="location" id="location" form="form1">
     <option value="1">Chicago</option>
@@ -25,17 +25,20 @@ include_once("config.php");
     <option value="5">Dallas</option>
     </select>
     <br>
-    <br>
     <form name="form1" method="post" action="displaymovies.php">
-        <label for="month">Month</label>
+        <label for="month">Month </label>
         <input type="text" name="month" id="month"><br>
-        <label for="day">Day</label>
+        <label for="day">Day   </label>
         <input type="text" name="day" id="day"><br>
         <input type="submit" value="Submit">
     </form>
     </div>
     </a>
 </body>
+<footer>
+	<div style="margin: 0 auto">
+	<a class="button" href="index.php">Home</a></div>
+</footer>
 </html>
 
 

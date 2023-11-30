@@ -7,11 +7,23 @@
 
 // Include the database connection file
 include_once("config.php");
-?>
-
-<?php
 // Fetch contacts (in descending order)
-$result = mysqli_query($mysqli, "SELECT * FROM movies ORDER BY "); 
+if(isset($_POST['update']))
+{	
+	// Retrieve record values
+	$location = mysqli_real_escape_string($mysqli, $_POST['location']);
+	$month = mysqli_real_escape_string($mysqli, $_POST['month']);
+	$day = mysqli_real_escape_string($mysqli, $_POST['day']);
+
+    if()
+    $result = mysqli_query($mysqli, "SELECT * FROM movies ORDER BY ");
+	
+}
+else if (isset($_POST['cancel'])) {
+	// Redirect to home page (index.php)
+	header("Location: index.php");
+}
+ 
 ?><html>
 <head>	
 	<title>Concessions</title>
