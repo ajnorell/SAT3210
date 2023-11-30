@@ -36,7 +36,7 @@ include_once("config.php");
     </a>
 </body>
 <footer>
-	<div style="margin: 0 auto">
+	<div style="margin: 0 auto" style="width: 75%">
 	<a class="button" href="index.php">Home</a></div>
 </footer>
 </html>
