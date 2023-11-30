@@ -81,7 +81,7 @@ try:
         acct_num varchar(13),
         routing_num varchar(13),
         address varchar(50),
-        FOREIGN KEY (emp_ID) REFERENCES employees (emp_ID)
+        FOREIGN KEY (emp_ID) REFERENCES employees (emp_ID) ON DELETE CASCADE
         )               
     """)
     con.commit()
@@ -124,7 +124,7 @@ try:
         con_training boolean,
         tix_training boolean,
         man_training boolean,
-        FOREIGN KEY (emp_ID) REFERENCES employees (emp_ID)
+        FOREIGN KEY (emp_ID) REFERENCES employees (emp_ID) ON DELETE CASCADE
         )
     """)
     con.commit()
