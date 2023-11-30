@@ -4,6 +4,7 @@
 //Add Concessions
 //ajnorell, ajurewic, ikgatti
 //@mysqli @php
+
 // Include database connection file
 include_once("config.php");
 

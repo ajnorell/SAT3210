@@ -8,7 +8,6 @@
 // Include database connection file
 include_once("config.php");
 
-$name = $role = $loc_ID = $emp_ID = "";
 $nameErr = $roleErr = $loc_IDErr = $emp_IDErr = "";
 
 if(isset($_POST['update']))
@@ -38,7 +37,7 @@ if(isset($_POST['update']))
 	} else {	
 		// Execute add 
 		$stmt = $mysqli->prepare("INSERT INTO employees (emp_ID, loc_ID, role, name) VALUES (?,?,?,?)");
-		$stmt->bind_param("ssss", $name, $role, $loc_ID,$emp_ID);
+		$stmt->bind_param("ssss", $name, $loc_ID, $role, $emp_ID);
 		$stmt->execute();
 
 		// Redirect to home page (index.php)
