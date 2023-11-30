@@ -41,4 +41,8 @@ $result = mysqli_query($mysqli, "SELECT emp_ID, name, role, loc_ID, location FRO
 
 	
 </body>
+<footer>
+	<div style = "margin-left: 50%">
+	<a class="button" href="index.php">Home</a></div>
+</footer>
 </html>

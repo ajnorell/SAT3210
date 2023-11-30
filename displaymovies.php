@@ -1,14 +1,17 @@
 <?php
 //SAT 3210
 //Course Project Extra Credit
-//Handle Concessions
+//Display Selected Movies
 //ajnorell, ajurewic, ikgatti
 //@mysqli @php
+
 // Include the database connection file
 include_once("config.php");
+?>
 
+<?php
 // Fetch contacts (in descending order)
-$result = mysqli_query($mysqli, "SELECT * FROM concessions ORDER BY con_type"); 
+$result = mysqli_query($mysqli, "SELECT * FROM movies ORDER BY "); 
 ?><html>
 <head>	
 	<title>Concessions</title>
