@@ -87,7 +87,7 @@ else {
 					<input class="cancel" type="submit" item="cancel" value="Cancel">
 				</td>
 				<td>
-					<input type="submit" item="update" value="Update">
+					<input type="submit" item="update" value="update">
 					<input type="hidden" item="item" value=<?php echo $_GET['item'];?>>
 				</td>
 			</tr>
