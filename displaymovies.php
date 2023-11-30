@@ -6,8 +6,7 @@
 //@mysqli @php
 
 // Include the database connection file
-include_once("config.php")
-};
+include_once("config.php");
 // Fetch contacts (in descending order)
 if(isset($_POST['update']))
 {	
@@ -30,11 +29,19 @@ if(isset($_POST['update']))
 		}		
 	} else {	
 		// Execute UPDATE 
-		$stmt = $mysqli->prepare("SELECT * FROM movies WHERE loc_id=? AND ");
-		$stmt->bind_param("ssss", $name, $role, $loc_ID,$emp_ID);
-		$stmt->execute();
+		$result = $mysqli->prepare('
+        SELECT title 
+        FROM movies 
+        CASE 
+        WHEN ? = start_month OR end_month THEN ? BETWEEN
+        WHEN ? BETWEEN start_month AND end_month THEN CASE
+        ');
+		$result->bind_param("dd", $month, $day);
+        ;
+		$result->execute();
 	}
 	
+}
 else if (isset($_POST['cancel'])) {
 	// Redirect to home page (index.php)
 	header("Location: index.php");
