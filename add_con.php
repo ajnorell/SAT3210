@@ -78,7 +78,7 @@ else if (isset($_POST['cancel'])) {
 					<input class="cancel" type="submit" item="cancel" value="Cancel">
 				</td>
 				<td>
-					<input type="submit" name="Add" value="update">
+					<input type="submit" name="update" value="Add">
 				</td>
 			</tr>
 		</table>
