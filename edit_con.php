@@ -1,3 +1,9 @@
+SAT 3210
+Course Project Extra Credit
+Edit Concessions
+ajnorell, ajurewic, ikgatti
+@mysqli @php
+
 <?php
 // Include database connection file
 include_once("config.php");

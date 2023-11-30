@@ -1,3 +1,9 @@
+SAT 3210
+Course Project Extra Credit
+Database Conncetion 
+ajnorell, ajurewic, ikgatti
+@mysqli @php
+
 <?php
 // Basic connection settings
 $databaseHost = '127.0.0.1';

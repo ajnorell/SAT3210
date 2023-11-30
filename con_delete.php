@@ -1,9 +1,8 @@
-
-// SAT 3210
-// Course Project Extra Credit
-// Table Creation Script
-// ajnorell, ajurewic, ikgatti
-// @mysqli @php
+SAT 3210
+Course Project Extra Credit
+Delete Concessions
+ajnorell, ajurewic, ikgatti
+@mysqli @php
 
 <?php
 // Include database connection file

@@ -1,6 +1,7 @@
 #SAT3210
 #Course Project
-#Table Creation Script
+#Create Database and Table Schema
+#To be followed by load_data.py
 #ajnorell, ajurewic, ikgatti
 #Mariadb
 

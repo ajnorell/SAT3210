@@ -1,6 +1,6 @@
 #SAT3210
 #Course Project
-#Table Creation Script
+#Create and load the database
 #ajnorell, ajurewic, ikgatti
 #Mariadb
 

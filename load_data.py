@@ -1,6 +1,6 @@
 #SAT3210
 #Course Project
-#Table Creation Script
+#Load Data after running create.py
 #ajnorell, ajurewic, ikgatti
 # @mariadb @python3
 
