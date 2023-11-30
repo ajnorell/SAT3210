@@ -487,8 +487,9 @@ try:
         show_emp()
         sel = input("What is the id of employee you want to delete?: ")
         conf = input("Are you sure you want to delete employee #" + sel + "?(y/n): ")
+        sel2 = tuple(sel)
         if conf == "y":
-            cursor.execute("DELETE FROM employees WHERE emp_ID=?",(sel))
+            cursor.execute("DELETE FROM employees WHERE emp_ID=?",(sel2))
             cursor.commit()
             print("Employee #" + sel + " deleted.")
         else:
