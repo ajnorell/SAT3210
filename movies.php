@@ -15,7 +15,7 @@ include_once("config.php");
 </head>
 <body>
     <a>
-    <div style="margin: 0 auto">
+    <div style="margin: 0 auto" style="width: 1000 px">
     <label for="location">Choose a location:</label>
     <select name="location" id="location" form="form1">
     <option value="1">Chicago</option>
@@ -36,7 +36,7 @@ include_once("config.php");
     </a>
 </body>
 <footer>
-	<div style="margin: 0 auto" style="width: 75%">
+	<div style="margin: 0 auto" style="width: 500 px">
 	<a class="button" href="index.php">Home</a></div>
 </footer>
 </html>
