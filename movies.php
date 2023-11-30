@@ -30,7 +30,8 @@ include_once("config.php");
         <input type="text" name="month" id="month"><br>
         <label for="day">Day   </label>
         <input type="text" name="day" id="day"><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="update">
+        <input type="submit" value="cancel">
     </form>
     </div>
     </a>

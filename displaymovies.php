@@ -6,19 +6,35 @@
 //@mysqli @php
 
 // Include the database connection file
-include_once("config.php");
+include_once("config.php")
+};
 // Fetch contacts (in descending order)
 if(isset($_POST['update']))
 {	
+    $locationErr = $monthErr = $dayErr = "";
+
 	// Retrieve record values
 	$location = mysqli_real_escape_string($mysqli, $_POST['location']);
 	$month = mysqli_real_escape_string($mysqli, $_POST['month']);
 	$day = mysqli_real_escape_string($mysqli, $_POST['day']);
 
-    if()
-    $result = mysqli_query($mysqli, "SELECT * FROM movies ORDER BY ");
+    if(empty($location) || empty($month) || empty($day)) {	
+		if(empty($location)) {
+			$locationErr = "* required";
+		}
+		if(empty($month)) {
+			$monthErr = "* required";
+		}
+		if(empty($day)) {
+			$dayErr = "* required";
+		}		
+	} else {	
+		// Execute UPDATE 
+		$stmt = $mysqli->prepare("SELECT * FROM movies WHERE loc_id=? AND ");
+		$stmt->bind_param("ssss", $name, $role, $loc_ID,$emp_ID);
+		$stmt->execute();
+	}
 	
-}
 else if (isset($_POST['cancel'])) {
 	// Redirect to home page (index.php)
 	header("Location: index.php");
