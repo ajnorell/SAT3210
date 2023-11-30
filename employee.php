@@ -42,7 +42,8 @@ $result = mysqli_query($mysqli, "SELECT emp_ID, name, role, loc_ID, location FRO
 	
 </body>
 <footer>
-	<div style = "align: center">
-	<a class="button" href="index.php" style = "" >Home</a></div>
+	<!-- <div style = "align: center"> -->
+	<a class="button" href="index.php" style = "margin:0 auto; width: 800px;" >Home</a>
+	<!-- </div> -->
 </footer>
 </html>
