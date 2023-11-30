@@ -6,7 +6,7 @@
 //@mysqli @php
 // Include database connection file
 include_once("config.php");
-
+$name = $role = $loc_ID = $emp_ID = "";
 $nameErr = $roleErr = $loc_IDErr = $emp_IDErr = "";
 
 if(isset($_POST['update']))
