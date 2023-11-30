@@ -97,6 +97,6 @@ else if (isset($_POST['cancel'])) {
 	</form>
 </body>
 <footer>
-	<a class="button" href="index.php">Home</a>
+	<b class="button" href="index.php">Home</b>
 </footer>
 </html>

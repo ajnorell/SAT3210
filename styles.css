@@ -12,6 +12,10 @@ a {
     padding: 6px;
 }
 
+b {
+    text-align: center;
+}
+
 table {
     border-collapse: collapse;
     border: 1px solid #00838F;
