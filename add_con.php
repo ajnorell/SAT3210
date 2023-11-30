@@ -1,6 +1,6 @@
 SAT 3210
 Course Project Extra Credit
-Edit Concessions
+Add Concessions
 ajnorell, ajurewic, ikgatti
 @mysqli @php
 
@@ -8,7 +8,7 @@ ajnorell, ajurewic, ikgatti
 // Include database connection file
 include_once("config.php");
 
-$con_typeErr = $priceErr = "";
+$con_typeErr = $priceErr = $itemErr = "";
 
 if(isset($_POST['update']))
 {	
@@ -20,16 +20,19 @@ if(isset($_POST['update']))
 	$con_typeErr = $priceErr = "";
 	
 	// Check for empty fields
-	if(empty($con_type) || empty($price)) {	
+	if(empty($con_type) || empty($price) || empty($item)) {	
 		if(empty($con_type)) {
 			$con_typeErr = "* required";
 		}
 		if(empty($price)) {
 			$priceErr = "* required";
 		}		
+		if(empty($item)) {
+			$itemErr = "* required";
+		}
 	} else {	
-		// Execute UPDATE 
-		$stmt = $mysqli->prepare("UPDATE concessions SET con_type=?, price=? WHERE item=?");
+		// Execute add 
+		$stmt = $mysqli->prepare("INSERT INTO concessions (con_type, price, item) VALUES (?,?,?)");
 		$stmt->bind_param("sds", $con_type, $price, $item);
 		$stmt->execute();
 
@@ -42,35 +45,21 @@ else if (isset($_POST['cancel'])) {
 	header("Location: index.php");
 }
 ?>
-<?php
-// Retrieve id value from querystring parameter
-$item = $_GET['item'];
-$item = mysqli_escape_string($mysqli, $item);
-$item = "\"" . $item . "\"";
-
-// Get contact by id
-$result = mysqli_query($mysqli, "SELECT * FROM concessions WHERE item = $item");
-if (!$result) {
-    printf("Error: %s\n", mysqli_error($mysqli));
-    exit();
-}
-else {
-	while($res = mysqli_fetch_array($result))
-	{
-		$item = $res['item'];
-		$price = $res['price'];
-		$con_type = $res['con_type'];
-	}
-}
-?>
 <html>
 <head>	
-	<title>Edit Concessions</title>
+	<title>Add Concessions</title>
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-	<form item="form1" method="post" action="edit_con.php?item=<?php echo $item ?>">
+	<form item="form1" method="post" action="add_con.php">
 		<table>
+			<tr> 
+				<td>Item</td>
+				<td>
+					<input type="text" name="item" value="<?php echo $item;?>">
+					<span class="error"><?php echo $itemErr;?></span>
+				</td>
+			</tr>
 			<tr> 
 				<td>Price</td>
 				<td>
@@ -91,7 +80,6 @@ else {
 				</td>
 				<td>
 					<input type="submit" name="update" value="update">
-					<input type="hidden" name="item" value=<?php echo $_GET['item'];?>>
 				</td>
 			</tr>
 		</table>
