@@ -42,6 +42,6 @@ $result = mysqli_query($mysqli, "SELECT emp_ID, name, role, loc_ID, location FRO
 	
 </body>
 <footer>
-	<a class="buttoncenter" class="button" href="index.php" >Home</a>
+	<a class="buttoncenter" class="button" href="index.php">Home</a>
 </footer>
 </html>

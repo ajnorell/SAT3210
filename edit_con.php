@@ -97,7 +97,6 @@ else {
 	</form>
 </body>
 <footer>
-	<div style = "margin-left: 50%">
-	<a class="button" href="index.php">Home</a></div>
+	<a class="buttoncenter" class="button" href="index.php">Home</a>
 </footer>
 </html>
