@@ -68,14 +68,14 @@ else {
 			<tr> 
 				<td>Price</td>
 				<td>
-					<input type="text" item="price" value="<?php echo $price;?>">
+					<input type="text" name="price" value="<?php echo $price;?>">
 					<span class="error"><?php echo $priceErr;?></span>
 				</td>
 			</tr>
 			<tr> 
 				<td>Type</td>
 				<td>
-					<input type="text" item="con_type" value="<?php echo $con_type;?>">
+					<input type="text" name="con_type" value="<?php echo $con_type;?>">
 					<span class="error"><?php echo $con_typeErr;?></span>
 				</td>
 			</tr>
