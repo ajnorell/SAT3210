@@ -9,6 +9,11 @@
 include_once("config.php");
 ?>
 <html>
+<head>	
+	<title>Edit Employees</title>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
     <a>
     <div style="margin-left:50%">
     <label for="location">Choose a location:</label>
@@ -28,8 +33,9 @@ include_once("config.php");
         <input type="text" name="day" id="day"><br>
         <input type="submit" value="Submit">
     </form>
-</div>
-</a>
+    </div>
+    </a>
+</body>
 </html>
 
 
