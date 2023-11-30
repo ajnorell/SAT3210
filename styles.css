@@ -12,12 +12,19 @@ a {
     padding: 6px;
 }
 
+b {
+    color: #00838F;
+    text-decoration: none;
+    padding: 6px;
+    text-align: center;
+}
+
 table {
     border-collapse: collapse;
     border: 1px solid #00838F;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 75%;
     font-size: 18px;
 }
 

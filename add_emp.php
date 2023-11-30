@@ -37,7 +37,7 @@ if(isset($_POST['update']))
 	} else {	
 		// Execute add 
 		$stmt = $mysqli->prepare("INSERT INTO employees (emp_ID, loc_ID, role, name) VALUES (?,?,?,?)");
-		$stmt->bind_param("ssss", $name, $loc_ID, $role, $emp_ID);
+		$stmt->bind_param("ssss", $emp_ID, $loc_ID, $role, $name);
 		$stmt->execute();
 
 		// Redirect to home page (index.php)
@@ -96,4 +96,7 @@ else if (isset($_POST['cancel'])) {
 		</table>
 	</form>
 </body>
+<footer>
+	<b href="index.php">Home</b>
+</footer>
 </html>
