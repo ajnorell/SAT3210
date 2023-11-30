@@ -11,7 +11,7 @@ try:
     con = mariadb.connect(
         user="root",
         password="P@ssw0rd",
-        host="localhost",
+        host="127.0.0.1",
         port=3306,
         local_infile=1
     )
