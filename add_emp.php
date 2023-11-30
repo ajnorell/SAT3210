@@ -4,8 +4,10 @@
 //Add Employees
 //ajnorell, ajurewic, ikgatti
 //@mysqli @php
+
 // Include database connection file
 include_once("config.php");
+
 $name = $role = $loc_ID = $emp_ID = "";
 $nameErr = $roleErr = $loc_IDErr = $emp_IDErr = "";
 
@@ -29,6 +31,7 @@ if(isset($_POST['update']))
 		}
 		if(empty($loc_ID)) {
 			$loc_IDErr = "* required";
+		}
 		if(empty($emp_ID)) {
 			$emp_IDErr = "* required";
 		}		
@@ -45,7 +48,6 @@ if(isset($_POST['update']))
 else if (isset($_POST['cancel'])) {
 	// Redirect to home page (index.php)
 	header("Location: index.php");
-}
 }
 ?>
 <html>
