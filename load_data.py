@@ -2,9 +2,8 @@
 #Course Project
 #Table Creation Script
 #ajnorell, ajurewic, ikgatti
-#Mariadb
+# @mariadb @python3
 
-### BROKEN
 
 import mariadb
 import sys
@@ -20,16 +19,6 @@ try:
     )
 
     cursor = con.cursor()
-
-    cursor.execute("DROP * FROM training")
-    cursor.execute("DROP * FROM payroll")
-    cursor.execute("DROP * FROM concessions")
-    cursor.execute("DROP * FROM time_slot")
-    cursor.execute("DROP * FROM movies")
-    cursor.execute("DROP * FROM screens")
-    cursor.execute("DROP * FROM theater")
-    
-    cursor.commit()
 
     cursor.execute("""
         LOAD DATA LOCAL INFILE '/home/sat3210/SAT3210/theater.csv'

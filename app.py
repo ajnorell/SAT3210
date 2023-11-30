@@ -1,8 +1,9 @@
 #SAT3210
-#Lab06
-#Section 5
-#ajnorell, ikgatti, ajurewic
-#Mariadb
+#Course Project
+#Table Creation Script
+#ajnorell, ajurewic, ikgatti
+# @mariadb @python3
+
 
 import mariadb
 import sys

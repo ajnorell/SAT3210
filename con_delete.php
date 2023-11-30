@@ -1,3 +1,10 @@
+
+// SAT 3210
+// Course Project Extra Credit
+// Table Creation Script
+// ajnorell, ajurewic, ikgatti
+// @mysqli @php
+
 <?php
 // Include database connection file
 include("config.php");
