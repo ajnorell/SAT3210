@@ -30,11 +30,15 @@ if(isset($_POST['update']))
 	} else {	
 		// Execute UPDATE 
 		$result = $mysqli->prepare('
-        SELECT title 
-        FROM movies 
-        CASE 
-        WHEN ? = start_month OR end_month THEN ? BETWEEN
-        WHEN ? BETWEEN start_month AND end_month THEN CASE
+        SELECT title
+		CASE
+		WHERE ? = start_month OR end_month AND ? > start_day AND ? < end_day THEN 'T'
+		WHERE ? BETWEEN start_month AND end_month THEN 'T'
+		ELSE 'F'
+		END AS comp
+		FROM movies
+		WHERE comp =  'T'
+		AND
         ');
 		$result->bind_param("dd", $month, $day);
         ;
