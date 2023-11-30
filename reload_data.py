@@ -22,6 +22,11 @@ try:
     cursor = con.cursor()
 
     cursor.execute("""
+        DROP * FROM training, movies, screens, payroll, time_slot, concessions, employees, theater;
+
+    """)
+
+    cursor.execute("""
         LOAD DATA LOCAL INFILE '/home/sat3210/SAT3210/theater.csv'
         REPLACE INTO TABLE theater
         FIELDS TERMINATED BY ','
