@@ -1,6 +1,6 @@
 SELECT movies.title,
 time_slot.day, time_slot.start_hr, time_slot.start_min
-screens. screen num, screens. seat_type, screens. screen_type, screens.capacity
+screens.screen num, screens.seat_type, screens.screen_type, screens.capacity
 CASE
 WHERE 8 = movies.start_month AND 15 > movies.start_day THEN 'T'
 WHERE 8 = movies.end_month AND 15 < movies.end_day THEN 'T'
