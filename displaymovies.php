@@ -53,7 +53,8 @@ else if (isset($_POST['cancel'])) {
 		while($res = mysqli_fetch_array($result)) { 		
 			echo "<tr>";
 			echo "<td>".$res['title']."</td>";
-			echo "<td>".$res['start_hr']." ".$res['start_min']."</td>";
+			echo "<td>".$res['start_hr']."</td>";
+			echo "<td>".$res['start_min']."</td>";
 			echo "<td>".$res['screen_num']."</td>";
 			echo "<td>".$res['screen_type']."</td>";	
 			echo "<td>".$res['seat_type']."</td>";	
