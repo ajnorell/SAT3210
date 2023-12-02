@@ -468,12 +468,12 @@ try:
                 print(table)
 
             case "4":
-                cursor.execute("SELECT now_showing, title, time_slot_ID, loc_ID, screen_ID, start_date, start_month, end_date, end_month FROM movies LIMIT 10")
+                cursor.execute("SELECT now_showing, title, time_slot_ID, loc_ID, screen_ID, start_date, end_date FROM movies LIMIT 10")
                 if cursor.rowcount == 0:
                     print("There are no movies :(")
                 else:
                     rows = cursor.fetchall()
-                    table = PrettyTable(["Now Showing","Title","Time Slot", "Location ID", "Screen ID", "Start Date", "Start Month", "End Day", "End Month"])
+                    table = PrettyTable(["Now Showing","Title","Time Slot", "Location ID", "Screen ID", "Start Date", "End Date"])
                     for i in rows:
                         table.add_row(i)
                     print(table)

@@ -102,10 +102,8 @@ try:
         time_slot_ID varchar(4) NOT NULL,
         loc_ID varchar(5) NOT NULL,
         screen_ID varchar(4) NOT NULL,
-        start_date decimal(2,0) NOT NULL,
-        start_month decimal(2,0) NOT NULL,
-        end_date decimal(2,0) NOT NULL,
-        end_month decimal(2,0) NOT NULL,
+        start_date date NOT NULL,
+        end_date date NOT NULL,
         FOREIGN KEY (time_slot_ID) REFERENCES time_slot (slot_ID),
         FOREIGN KEY (loc_ID) REFERENCES theater (loc_ID),
         FOREIGN KEY (screen_ID) REFERENCES screens (screen_ID)
