@@ -15,6 +15,7 @@ include_once("config.php");
 </head>
 <body>
     <table>
+        <tr><td>
         <form name="form1" method="post" action="displaymovies.php">
             <label for="location">Choose a location:</label>
                 <select name="location" id="location">
@@ -32,6 +33,7 @@ include_once("config.php");
             <input type="submit" name="update" value="Search">
             
         </form>
+        </td></tr>
     </table>
 </body>
 <footer>
