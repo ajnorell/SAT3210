@@ -10,65 +10,56 @@ include_once("config.php");
 // Fetch contacts (in descending order)
 if(isset($_POST['update']))
 {	
-    $locationErr = $monthErr = $dayErr = "";
+    $locationErr = $dateErr ="";
 
 	// Retrieve record values
 	$location = mysqli_real_escape_string($mysqli, $_POST['location']);
-	$month = mysqli_real_escape_string($mysqli, $_POST['month']);
-	$day = mysqli_real_escape_string($mysqli, $_POST['day']);
+	$date = mysqli_real_escape_string($mysqli, $_POST['date']);
 
-    if(empty($location) || empty($month) || empty($day)) {	
+    if(empty($location) || empty($date)){	
 		if(empty($location)) {
 			$locationErr = "* required";
 		}
-		if(empty($month)) {
-			$monthErr = "* required";
-		}
-		if(empty($day)) {
-			$dayErr = "* required";
-		}		
+		if(empty($date)) {
+			$dateErr = "* required";
+		}	
 	} else {	
-		// Execute UPDATE 
-		$result = $mysqli->prepare('
-        SELECT movies.title, 
-		time_slot.day, time_slot.start_hr, time_slot.start_min, 
-		screens.screen_num, screens.seat_type, screens.screen_type, screens.capacity
-		FROM movies INNER JOIN screens ON movies.screen_ID = screens.screen_ID
-		UNION
-		movies INNER JOIN time_slot ON movies.time_slot_ID = time_slot.slot_ID
-		WHERE ? BETWEEN movies.start_date AND movies.end_date AND loc_ID = ?
-        ');
-		$result->bind_param("dd", $month, $day, $day, $month, $location);
+		// Execute select 
+		$result = $mysqli->prepare("SELECT movies.title, time_slot.day, time_slot.start_hr, time_slot.start_min, screens.screen_num, screens.seat_type, screens.screen_type, screens.capacity FROM time_slot INNER JOIN movies ON movies.time_slot_ID = time_slot.slot_ID INNER JOIN screens ON movies.screen_ID = screens.screen_ID WHERE ? BETWEEN movies.start_date AND movies.end_date AND movies.loc_ID = ?");
+		$result->bind_param("s,s", $date, $location);
 		$result->execute();
-	}
-	
-}
+	}}
+
 else if (isset($_POST['cancel'])) {
 	// Redirect to home page (index.php)
 	header("Location: index.php");
-}
- 
-?><html>
+} ?>
+
+<html>
 <head>	
-	<title>Concessions</title>
+	<title>Movies</title>
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 	<table>
 		<tr>
-			<td>Type</td>
-			<td>Item</td>
-			<td>Price</td>
-			<td><a class="button" href="add_con.php">Add Concesisons</a></td>
+			<td>Title</td>
+			<td>Start Time</td>
+			<td>Screen Number</td>
+			<td>Screen Type</td>
+			<td>Seat Type</td>
+			<td>Capactiy</td>
 		</tr>
 		<?php
 		// Print contacts 
 		while($res = mysqli_fetch_array($result)) { 		
 			echo "<tr>";
-			echo "<td>".$res['con_type']."</td>";
-			echo "<td>".$res['item']."</td>";
-			echo "<td>".$res['price']."</td>";	
-			echo "<td><a href=\"edit_con.php?item=$res[item]\">Edit</a> | <a href=\"con_delete.php?item=$res[item]\" onClick=\"return confirm('Are you sure you want to delete this contact?')\">Delete</a></td>";		
+			echo "<td>".$res['title']."</td>";
+			echo "<td>".$res['start_hr']." ".$res['start_min']."</td>";
+			echo "<td>".$res['screen_num']."</td>";
+			echo "<td>".$res['screen_type']."</td>";	
+			echo "<td>".$res['seat_type']."</td>";	
+			echo "<td>".$res['capacity']."</td>";	
 		}
 		?>
 	</table>
