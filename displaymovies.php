@@ -42,7 +42,8 @@ else if (isset($_POST['cancel'])) {
 	<table>
 		<tr>
 			<td>Title</td>
-			<td>Start Time</td>
+			<td>Start Hr</td>
+			<td>Start Min</td>
 			<td>Screen Number</td>
 			<td>Screen Type</td>
 			<td>Seat Type</td>
