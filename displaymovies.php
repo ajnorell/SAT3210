@@ -33,16 +33,10 @@ if(isset($_POST['update']))
         SELECT movies.title, 
 		time_slot.day, time_slot.start_hr, time_slot.start_min, 
 		screens.screen_num, screens.seat_type, screens.screen_type, screens.capacity
-		CASE
-		WHERE (((? = start_month) OR (? = end_month)) AND ((? > start_day) AND (? < end_day))) THEN 'T'
-		WHERE (? BETWEEN start_month AND end_month) THEN 'T'
-		ELSE 'F'
-		END AS comp
 		FROM movies INNER JOIN screens ON movies.screen_ID = screens.screen_ID
 		UNION
 		movies INNER JOIN time_slot ON movies.time_slot_ID = time_slot.slot_ID
-		WHERE comp =  'T'
-		AND loc_ID = ?
+		WHERE ? BETWEEN movies.start_date AND movies.end_date AND loc_ID = ?
         ');
 		$result->bind_param("dd", $month, $day, $day, $month, $location);
 		$result->execute();
