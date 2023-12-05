@@ -16,7 +16,7 @@ include_once("config.php");
 <body>
     <form name="form1" method="post" action="displaymovies.php">
         <label for="location">Choose a location:</label>
-            <select name="location" id="location" form="form1">
+            <select name="location" id="location">
             <option value="1">Chicago</option>
             <option value="2">New York</option>
             <option value="3">Minneapolis</option>
