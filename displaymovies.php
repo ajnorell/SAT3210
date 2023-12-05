@@ -51,7 +51,6 @@ else if (isset($_POST['cancel'])) {
 			<td>Capactiy</td>
 		</tr>
 		<?php
-		echo print_r($result);
 		// Print contacts 
 		while($res = mysqli_fetch_array($result)) { 		
 			echo "<tr>";
