@@ -1,6 +1,1 @@
-SELECT movies.title, 
-time_slot.day, time_slot.start_hr, time_slot.start_min, 
-screens.screen_num, screens.seat_type, screens.screen_type, screens.capacity
-FROM time_slot INNER JOIN movies ON time_slot.slot_ID = movies.time_slot_ID
-INNER JOIN screens ON movies.screen_ID = screens.screen_ID
-WHERE '2023-08-15' BETWEEN movies.start_date AND movies.end_date
+SELECT movies.title, time_slot.day, time_slot.start_hr, time_slot.start_min, screens.screen_num, screens.seat_type, screens.screen_type, screens.capacity FROM time_slot INNER JOIN movies ON time_slot.slot_ID = movies.time_slot_ID INNER JOIN screens ON movies.screen_ID = screens.screen_ID WHERE '2023-08-05' BETWEEN movies.start_date AND movies.end_date AND movies.loc_ID = '1'
