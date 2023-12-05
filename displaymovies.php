@@ -46,8 +46,8 @@ else if (isset($_POST['cancel'])) {
 			<td>Start Hr</td>
 			<td>Start Min</td>
 			<td>Screen Number</td>
-			<td>Screen Type</td>
 			<td>Seat Type</td>
+			<td>Screen Type</td>
 			<td>Capactiy</td>
 		</tr>
 		<?php
@@ -59,8 +59,8 @@ else if (isset($_POST['cancel'])) {
 			echo "<td>".$res['start_hr']."</td>";
 			echo "<td>".$res['start_min']."</td>";
 			echo "<td>".$res['screen_num']."</td>";
-			echo "<td>".$res['screen_type']."</td>";	
 			echo "<td>".$res['seat_type']."</td>";	
+			echo "<td>".$res['screen_type']."</td>";	
 			echo "<td>".$res['capacity']."</td>";	
 		}
 		?>
