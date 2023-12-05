@@ -42,6 +42,7 @@ else if (isset($_POST['cancel'])) {
 	<table>
 		<tr>
 			<td>Title</td>
+			<td>Day</td>
 			<td>Start Hr</td>
 			<td>Start Min</td>
 			<td>Screen Number</td>
@@ -54,6 +55,7 @@ else if (isset($_POST['cancel'])) {
 		while($res = mysqli_fetch_array($result)) { 		
 			echo "<tr>";
 			echo "<td>".$res['title']."</td>";
+			echo "<td>".$res["day"]."</td>";
 			echo "<td>".$res['start_hr']."</td>";
 			echo "<td>".$res['start_min']."</td>";
 			echo "<td>".$res['screen_num']."</td>";
