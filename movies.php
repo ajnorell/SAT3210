@@ -25,7 +25,7 @@ include_once("config.php");
             </select>
         <br>
         <label for="date">Date </label>
-            <input type="date" name="date" id="date" form="form1"><br>
+            <input type="date" name="date" id="date"><br>
             
         <input type="submit" name="cancel" value="Cancel">
         <input type="submit" name="update" value="Search">
