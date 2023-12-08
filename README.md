@@ -14,3 +14,13 @@ the load_data.py script will only work if the database and schema exist but ther
 app.py is our application for the actual project and has no bearing on the website
 
 If the VM crashes, it has a habit of doing so. Turn the VM off, turn it back on and restore to the snapshot titled Submission. The database will be in a fresh state with the website loaded and pulled up.
+
+The final video is call FINAL.mkv
+
+The report is called Report.pdf
+
+The slides are called Slides.pdf
+
+See above for info about create & load scripts as well as the application.
+
+The database backup is called backup.sql and can be restored using "mariadb -u root -p movies < backup.sql" and supplying the password "P@ssw0rd" when prompted
