@@ -24,3 +24,5 @@ The slides are called Slides.pdf
 See above for info about create & load scripts as well as the application.
 
 The database backup is called backup.sql and can be restored using "mariadb -u root -p movies < backup.sql" and supplying the password "P@ssw0rd" when prompted
+
+The recorded video is not part of the files that are pushed to the vm so if for some reason your trying to view it on there you cant, github wont let me push a file that big to the cloud :(
